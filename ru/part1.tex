@@ -40,21 +40,20 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{Как он работает?}
 \begin{itemize}
-\item Вы набираете документ в формате \texttt{обычного текста} с \cmd{командами},
+\item Вы набираете документ в формате \emph{обычного текста} с \cmd{командами},
   которые описывают его структуру и смысл.
 \item Программа \texttt{latex} обрабатывает ваш текст и команды и преобразовывает
   его в красиво отформатированный документ.
 \end{itemize}
-\vskip 2ex
 \begin{center}
-\begin{minted}[frame=single]{latex}
+\begin{code}
 Шла Саша по шоссе и сосала \emph{сушку}.
-\end{minted}
-\vskip 2ex
+\end{code}
 \tikz\node[single arrow,fill=gray,font=\ttfamily\bfseries,%
   rotate=270,xshift=-1em]{latex};
-\vskip 2ex
-\fbox{Шла Саша по шоссе и сосала \emph{сушку}.}
+\begin{printout}
+Шла Саша по шоссе и сосала \emph{сушку}.
+\end{printout}
 \end{center}
 \end{frame}
 
@@ -62,6 +61,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{Ещё примеры команд и их результат\ldots}
+\vspace{-0.5mm}
 \begin{exampletwoup}
 \begin{itemize}
 \item Чай
@@ -69,19 +69,19 @@
 \item Печенье
 \end{itemize}
 \end{exampletwoup}
-\vskip 2ex
+\vspace{-0.5mm}
 \begin{exampletwoup}
 \begin{figure}
 \includegraphics{chick}
 \end{figure}
 \end{exampletwoup}
-\vskip 2ex
+\vspace{-0.5mm}
 \begin{exampletwoup}
 \begin{equation}
 \alpha + \beta + 1
 \end{equation}
 \end{exampletwoup}
-
+\vspace{-3mm}
 \tiny{Изображение взято с \url{http://www.andy-roberts.net/writing/latex/importing_images}}
 \end{frame}
 
@@ -110,7 +110,7 @@
 \begin{itemize}
   \item Минимальный документ \LaTeX{} (на русском языке):
 
-\inputminted[frame=single]{latex}{basics.tex}
+\inputcode{basics.tex}
 \item Команды начинаются с \emph{обратного слэша} \keystrokebftt{\bs}.
 \item Каждый документ начинается с команды \cmdbs{documentclass}.
 \item \emph{Аргумент} в фигурных скобках \keystrokebftt{\{} \keystrokebftt{\}}
@@ -129,14 +129,16 @@
 \item Он <<компилирует>> ваш текст \LaTeX{} автоматически и показывает результат.
 \vskip 2em
 \begin{center}
-\fbox{\href{\wlnewdoc{basics.tex}}{%
-Щёлкните здесь, чтобы открыть пример в \wllogo{}}}
-\\[1ex]\scriptsize{}
+\begin{printout}
+\href{\wlnewdoc{basics.tex}}{%
+Щёлкните здесь, чтобы открыть пример в \wllogo{}}
+\end{printout}
+\vspace{1ex}\scriptsize
 Для лучшего результата воспользуйтесь браузером
 \href{http://www.google.com/chrome}{Google Chrome} или новой версией браузера
 \href{http://www.mozilla.org/en-US/firefox/new/}{FireFox}.
 \end{center}
-\vskip 2ex
+\vspace{1ex}
 \item В дальнейшем при просмотре сладов пробуйте набирать рассматриваемые
   примеры в Overleaf.
 \item \textbf{Нет, правда, вы должны их попробовать по мере просмотра!}
@@ -154,11 +156,12 @@
 \item По большей части вы можете просто вводить текст как есть.
 
 \begin{exampletwouptiny}
-Слова разделяются одним или больше
-пробелами.
+Слова разделяются одним
+пробелом или несколькими.
 
-Абзацы разделяются одной или больше
-пустых строк.
+Абзацы разделяются одной
+пустой строкой или
+несколькими.
 \end{exampletwouptiny}
 \item Несколько пробелов подряд в исходном тексте воспринимаются как один.
 
@@ -173,18 +176,17 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{\insertsubsection{}: особенности}
+\vspace{-3ex}
 \small
 \begin{itemize}
 \item Символы кавычек вводятся хитро: используются символы \keystroke{<} и
   \keystroke{>} для <<ёлочек>>, и запятая \keystroke{,} с обратной кавычкой
   \keystroke{\char96} для ,,лапок``.
-
 \begin{exampletwouptiny}
 Кавычки-ёлочки: <<текст>>.
 
 Кавычки-лапки: ,,текст``.
 \end{exampletwouptiny}
-
 \item Некоторые часто встречающиеся символы имеют специальный смысл в \LaTeX:
 
 \begin{tabular}{cl}
@@ -228,33 +230,32 @@ even be above it.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{Typesetting Exercise 1}
+\begin{frame}[fragile]{Упражнение наборщика 1}
 
-\begin{block}{Typeset this in \LaTeX:
-\footnote{\url{http://en.wikipedia.org/wiki/Economy_of_the_United_States}}}
-In March 2006, Congress raised that ceiling an additional \$0.79 trillion to
-\$8.97 trillion, which is approximately 68\% of GDP. As of October 4, 2008, the
-``Emergency Economic Stabilization Act of 2008'' raised the current debt ceiling
-to \$11.3 trillion.
-\end{block}
-\vskip 2ex
-\begin{center}
-\fbox{\href{\wlnewdoc{basics-exercise-1.tex}}{%
-Click to open this exercise in \wllogo{}}}
-\end{center}
-
+\begin{tblock}{Наберите этот текст в \LaTeX:\footnotemark}
+По итогам 2015 года ВВП России снизился (на 2.8\%), впервые после кризиса
+2008--2009 годов. Инфляция выросла до 12.9\%. Реальные доходы населения
+снизились на 3.2\%. В то же время произошло снижение оттока капитала почти в
+3 раза (до \$58 млрд).
+\end{tblock}
+\footnotetext{\href{https://ru.wikipedia.org/wiki/\%D0\%AD\%D0\%BA\%D0\%BE\%D0\%BD\%D0\%BE\%D0\%BC\%D0\%B8\%D0\%BA\%D0\%B0_\%D0\%A0\%D0\%BE\%D1\%81\%D1\%81\%D0\%B8\%D0\%B8}{https://ru.wikipedia.org/wiki/Экономика\_{}России}}
+\vskip 1ex
+\begin{printout}\href{\wlnewdoc{basics-exercise-1.tex}}{%
+Щёлкните, чтобы открыть это упражнение в \wllogo{}}
+\end{printout}
 \begin{itemize}
-\item Hint: watch out for characters with special meanings!
-\item Once you've tried,
-\fbox{\href{\wlnewdoc{basics-exercise-1-solution.tex}}{%
-click here to see my solution}}.
+\item Указание: обращайте внимание на специальные символы!
+\item Когда попробуете,
+\ovllink{\href{\wlnewdoc{basics-exercise-1-solution.tex}}{%
+щёлкните, чтобы посмотреть решение}}.
+\vspace{2pt}
 \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Typesetting Mathematics}
+\subsection{Набор математики}
 \begin{frame}[fragile]{\insertsubsection{}: Dollar Signs}
 \begin{itemize}
 \item Why are dollar signs \keystrokebftt{\$} special? We use them to mark mathematics in text.\\[1ex]
@@ -281,28 +282,32 @@ Let $y = m x + b$ be \ldots
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsubsection{}: Notation}
+\begin{frame}[fragile]{\insertsubsection{}: Обозначения}
+\vspace{-3ex}
 \begin{itemize}
-\item Use caret \keystrokebftt{\char94} for superscripts and underscore \keystrokebftt{\_} for subscripts.
+\item Используйте <<крышку>> \keystrokebftt{\char94} для верхних индексов и
+  подчёркивание \keystrokebftt{\_} для нижних.
+
 \begin{exampletwouptiny}
 $y = c_2 x^2 + c_1 x + c_0$
 \end{exampletwouptiny}
-\vskip 2ex
 
-\item Use curly braces \keystrokebftt{\{} \keystrokebftt{\}} to group
-superscripts and subscripts.
+\item Используйте фигурные скобки \keystrokebftt{\{} \keystrokebftt{\}} для
+группировки верхних и нижних индексов.
+
 \begin{exampletwouptiny}
-$F_n = F_n-1 + F_n-2$     % oops!
+$F_n = F_n-1 + F_n-2$ % ой!
 
-$F_n = F_{n-1} + F_{n-2}$ % ok!
+$F_n = F_{n-1} + F_{n-2}$
 \end{exampletwouptiny}
-\vskip 2ex
 
-\item There are commands for Greek letters and common notation.
+\item Греческие буквы и математические операции набираются с помощью команд.
+
 \begin{exampletwouptiny}
 $\mu = A e^{Q/RT}$
 
-$\Omega = \sum_{k=1}^{n} \omega_k$
+$\Omega =
+  \sum_{k=1}^{n} \omega_k$
 \end{exampletwouptiny}
 \end{itemize}
 \end{frame}
@@ -310,30 +315,33 @@ $\Omega = \sum_{k=1}^{n} \omega_k$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsubsection{}: Displayed Equations}
+\begin{frame}[fragile]{\insertsubsection{}: Выключные уравнения}
 \begin{itemize}
-\item If it's big and scary, \emph{display} it on its own line using
-\cmdbegin{equation} and \cmdend{equation}.\\[2ex]
+  \item Если уравнение большое и страшное, \emph{вынесите} его на отдельную
+    строку с помощью
+\cmdbegin{equation} и \cmdend{equation}.
+\vspace{1ex}
 \begin{exampletwouptiny}
-The roots of a quadratic equation
-are given by
+Корни квадратного уравнения
+можно найти по формуле
 \begin{equation}
-x = \frac{-b \pm \sqrt{b^2 - 4ac}}
-         {2a}
+x =
+\frac{-b \pm\sqrt{b^2 - 4ac}}
+     {2a}
 \end{equation}
-where $a$, $b$ and $c$ are \ldots
+где $a$, $b$ и $c$ --- \dots
 \end{exampletwouptiny}
-\vskip 1em
-{\scriptsize Caution: \LaTeX{} mostly ignores your spaces in mathematics, but it
-can't handle blank lines in equations --- don't put blank lines in your
-mathematics.}
+
+{\scriptsize Замечание: \LaTeX{} почти всегда игнорирует пробелы при наборе
+  математики, но пустые строки он воспринимает как ошибки --- не вставляйте
+  пустые строки в формулы.}
 \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{Interlude: Environments}
+\begin{frame}[fragile]{Отступление: Окружения}
 \begin{itemize}
 \item \bftt{equation} is an \emph{environment} --- a context.
 \item A command can produce different output in different contexts.
@@ -359,22 +367,25 @@ same commands.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{Interlude: Environments}
+\begin{frame}[fragile]{Отступление: Окружения}
 \begin{itemize}
-\item The \cmdbs{begin} and \cmdbs{end} commands are used to create many
-different environments.
-\vskip 2ex
+\item Команды \cmdbs{begin} и \cmdbs{end} используются для создания разных
+  окружений.
 
-\item The \bftt{itemize} and \bftt{enumerate} environments generate lists.
+\item Окружения \bftt{itemize} и \bftt{enumerate} печатают списки.
+\vskip 1ex
+
 \begin{exampletwouptiny}
-\begin{itemize} % for bullet points
-\item Biscuits
-\item Tea
+% ненумерованный список
+\begin{itemize}
+\item Печенье
+\item Чай
 \end{itemize}
 
-\begin{enumerate} % for numbers
-\item Biscuits
-\item Tea
+%нумерованный список
+\begin{enumerate}
+\item Печенье
+\item Чай
 \end{enumerate}
 \end{exampletwouptiny}
 \end{itemize}
@@ -383,56 +394,70 @@ different environments.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{Interlude: Packages}
-
+\begin{frame}[fragile]{Отступление: Пакеты}
+\vspace{-3ex}
 \begin{itemize}
-\item All of the commands and environments we've used so far are built into
-\LaTeX.
+  \item Все команды и окружения, которые мы до сих пор
+    использовали,\footnote{Кроме \cmdbs{setmainfont} при подключении шрифта
+    с русскими буквами} были встроены в \LaTeX.
 
-\item \emph{Packages} are libraries of extra commands and environments. There
-are thousands of freely available packages.
+\item \emph{Пакеты} это библиотеки дополнительных команд и окружений.
+  Существуют тысячи пакетов в свободном доступе.
 
-\item We have to load each of the packages we want to use with a
-\cmdbs{usepackage} command in the \emph{preamble}.
+\item Чтобы загрузить пакет и пользоваться реализованными в нём командами,
+  нужно использовать команду \cmdbs{usepackage} в \emph{преамбуле}.
 
-\item Example: \bftt{amsmath} from the American Mathematical Society.
-\begin{minted}[fontsize=\small,frame=single]{latex}
+\item Пример: \bftt{amsmath} от Американского математического общества.
+\begin{code}
 \documentclass{article}
-\usepackage{amsmath} % preamble
+\usepackage{amsmath} % преамбула
 \begin{document}
-% now we can use commands from amsmath here...
+% теперь можно использовать команды из amsmath...
 \end{document}
-\end{minted}
+\end{code}
+\vspace*{2pt}
 \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsubsection{}: Examples with \bftt{amsmath}}
+\begin{frame}[fragile]{\insertsubsection{}: Примеры с \bftt{amsmath}}
+\vspace{-2ex}
 \begin{itemize}
-\item Use \bftt{equation*} (``equation-star'') for unnumbered equations.
+\item Можно использовать \bftt{equation*} (<<equation со звёздочкой>>) для
+  уравнений без номера.
 \begin{exampletwouptiny}
 \begin{equation*}
-  \Omega = \sum_{k=1}^{n} \omega_k
+\Omega=\sum_{k=1}^{n}\omega_k
 \end{equation*}
 \end{exampletwouptiny}
-\item \LaTeX{} treats adjacent letters as variables multiplied together, which
-is not always what you want. \bftt{amsmath} defines commands for many common
-mathematical operators.
+\item \LaTeX{} трактует рядом стоящие буквы как отдельные переменные, и это
+  не всегда то, что хочется. В \bftt{amsmath} определены команды для многих
+  часто используемых математических операторов.
 \begin{exampletwouptiny}
-\begin{equation*} % bad!
- min_{x,y} (1-x)^2 + 100(y-x^2)^2
+\begin{equation*} % плохо!
+ min_{x,y}(1-x)^2+10(y-x^2)^2
 \end{equation*}
-\begin{equation*} % good!
-\min_{x,y}{(1-x)^2 + 100(y-x^2)^2}
+\begin{equation*} % хорошо!
+\min_{x,y}(1-x)^2+10(y-x^2)^2
 \end{equation*}
 \end{exampletwouptiny}
-\item You can use \cmdbs{operatorname} for others.
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{\insertsubsection{}: Примеры с \bftt{amsmath}}
+\vspace{-2ex}
+\begin{itemize}
+\item Если подходящего оператора не нашлось, можно воспользоваться \cmdbs{operatorname}.
+\vspace{1ex}
 \begin{exampletwouptiny}
 \begin{equation*}
 \beta_i =
-\frac{\operatorname{Cov}(R_i, R_m)}
+\frac{\operatorname{Cov}(R_i,R_m)}
      {\operatorname{Var}(R_m)}
 \end{equation*}
 \end{exampletwouptiny}
@@ -442,28 +467,31 @@ mathematical operators.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsubsection{}: Examples with \bftt{amsmath}}
+\begin{frame}[fragile]{\insertsubsection{}: Примеры с \bftt{amsmath}}
+\vspace{-2ex}
 \begin{itemize}{\small
-\item Align a sequence of equations at the equals sign
+\item Можно выравнивать несколько уравнений по знакам равенства
+\begin{printout}
 \begin{align*}
 (x+1)^3 &= (x+1)(x+1)(x+1) \\
         &= (x+1)(x^2 + 2x + 1) \\
         &= x^3 + 3x^2 + 3x + 1
 \end{align*}
-with the \bftt{align*} environment.
+\end{printout}
+с помощью окружения \bftt{align*}.
 
 % for whatever reason, this doesn't play well with the twoup environment
-\begin{minted}[fontsize=\small,frame=single]{latex}
+\begin{code}
 \begin{align*}
 (x+1)^3 &= (x+1)(x+1)(x+1) \\
         &= (x+1)(x^2 + 2x + 1) \\
         &= x^3 + 3x^2 + 3x + 1
 \end{align*}
-\end{minted}
-\item An ampersand \keystrokebftt{\&} separates the left column (before the
-$=$) from the right column (after the $=$).
-\item A double backslash \keystrokebftt{\bs}\keystrokebftt{\bs} starts a new
-line.
+\end{code}
+\item Символ амперсанда \keystrokebftt{\&} отделяет левую колонку (до знака
+  $=$) от правой колонки (после знака $=$).
+\item Двойной обратный слэш \keystrokebftt{\bs}\keystrokebftt{\bs} начинает
+  новую строку.
 }\end{itemize}
 \end{frame}
 
@@ -471,49 +499,54 @@ line.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{Typesetting Exercise 2}
-
-\begin{block}{Typeset this in \LaTeX:}
-Let $X_1, X_2, \ldots, X_n$ be a sequence of independent and identically
-distributed random variables with $\operatorname{E}[X_i] = \mu$ and
-$\operatorname{Var}[X_i] = \sigma^2 < \infty$, and let
+\begin{frame}[fragile]{Упражнение наборщика 2}
+\vspace{-1.5ex}
+\abovedisplayskip=1pt
+\belowdisplayskip=1pt
+\begin{tblock}{Наберите этот текст в \LaTeX:}
+Пусть $X_1, X_2, \ldots, X_n$ --- последовательность независимых одинаково
+распределённых случайных величин, для которых
+$\operatorname{E}[X_i] = \mu$ и
+$\operatorname{Var}[X_i] = \sigma^2 < \infty$, и пусть
 \begin{equation*}
 S_n = \frac{1}{n}\sum_{i}^{n} X_i
 \end{equation*}
-denote their mean. Then as $n$ approaches infinity, the random variables
-$\sqrt{n}(S_n - \mu)$ converge in distribution to a normal $N(0, \sigma^2)$.
-\end{block}
-\vskip 2ex
-\begin{center}
-\fbox{\href{\wlnewdoc{basics-exercise-2.tex}}{%
-Click to open this exercise in \wllogo{}}}
-\end{center}
+обозначает их среднее арифметическое. Тогда при $n$, стремящемся к
+бесконечности, последовательность случайных величин
+$\sqrt{n}(S_n - \mu)$ сходится по распределению к нормальной $N(0, \sigma^2)$
+величине.
+\end{tblock}
+\vspace{-0.5ex}
+\begin{printout}\href{\wlnewdoc{basics-exercise-2.tex}}{%
+Щёлкните, чтобы открыть это упражнение в \wllogo{}}
+\end{printout}
+\vspace{-2ex}
 \begin{itemize}
-\item Hint: the command for $\infty$ is \cmdbs{infty}.
-\item Once you've tried,
-\fbox{\href{\wlnewdoc{basics-exercise-2-solution.tex}}{%
-click here to see my solution}}.
+\item Указание: Символ $\infty$ набирается как \cmdbs{infty}.
+\item Когда попробуете,
+\ovllink{\href{\wlnewdoc{basics-exercise-2-solution.tex}}{%
+щёлкните, чтобы увидеть решение}}.
 \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{End of Part 1}
+\begin{frame}{Конец первой части}
 \begin{itemize}
-\item Congrats! You've already learned how to \ldots
+\item Поздравляем! Вы уже узнали, как \ldots
 \begin{itemize}
-\item Typeset text in \LaTeX.
-\item Use lots of different commands.
-\item Handle errors when they arise.
-\item Typeset some beautiful mathematics.
-\item Use several different environments.
-\item Load packages.
+\item Набирать текст в \LaTeX.
+\item Использовать множество разных команд.
+\item Исправлят ошибки, когда они возникают.
+\item Красиво набирать математические формулы.
+\item Пользоваться несколькими различными окружениями.
+\item Подключать пакеты.
 \end{itemize}
-\item That's amazing!
-\item In Part 2, we'll see how to use \LaTeX{} to write structured documents
-with sections, cross references, figures, tables and bibliographies. See you
-then!
+\item Это здорово!
+\item Во второй части вы увидите, как, используя \LaTeX{}, набирать
+  структурированные документы с разделами, перекрёстными ссылками,
+  рисунками, таблицами и списком литературы. До встречи!
 \end{itemize}
 \end{frame}
 

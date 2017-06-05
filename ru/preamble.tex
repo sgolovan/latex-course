@@ -2,7 +2,7 @@
 % Common preamble for all three parts.
 %
 
-\usetheme{metropolis}
+\usetheme[block=fill]{metropolis}
 \setbeamercolor{frametitle}{use=normal text, parent=normal text}
 
 \usepackage{arevmath}
@@ -19,6 +19,28 @@
 \usepackage{multicol}
 \usepackage{tabularx}
 \usepackage{tikz}
+\usepackage{tcolorbox}
+
+\hypersetup{unicode=true}
+
+\tcbuselibrary{skins}
+\tcbuselibrary{listings}
+\tcbuselibrary{minted}
+\newtcolorbox{tblock}[1]{boxsep=1mm,sidebyside=false,bicolor=false,colback=white,title={#1}}
+\newtcolorbox{printout}{boxsep=0mm,sidebyside=false,bicolor=false,colback=white}
+\def\ovllink#1{\tcbox[on line,boxsep=0mm,colback=white]{#1}}
+\newtcblisting{code}{boxsep=0mm,listing only,minted language=latex}
+\newtcblisting{exampletwoup}{fontupper=\small,fontlower=\small,
+                             boxsep=0mm,listing side text,minted language=latex,
+                             bicolor,colbacklower=white,
+                             righthand ratio=0.45}
+\newtcblisting{exampletwouptiny}{fontupper=\footnotesize,fontlower=\footnotesize,
+                                 boxsep=0mm,listing side text,minted language=latex,
+                                 minted options={fontsize=\footnotesize},
+                                 bicolor,colbacklower=white,
+                                 righthand ratio=0.45}
+\newtcbinputlisting{\inputcode}[2][]{%
+listing file={#2},boxsep=0mm,listing only,minted language=latex}
 
 % only inline todonotes work
 \usepackage{xkeyval}
@@ -31,7 +53,7 @@
 \usenavigationsymbolstemplate{}
 
 \newcommand{\bftt}[1]{\textbf{\texttt{#1}}}
-\newcommand{\comment}[1]{{\color[HTML]{008080}\textit{\textbf{\texttt{#1}}}}}
+%\newcommand{\comment}[1]{{\color[HTML]{008080}\textit{\textbf{\texttt{#1}}}}}
 \newcommand{\cmd}[1]{{\color[HTML]{008000}\bftt{#1}}}
 \newcommand{\bs}{\char`\\}
 \newcommand{\cmdbs}[1]{\cmd{\bs#1}}
@@ -69,35 +91,6 @@
 \newcommand{\keystrokebftt}[1]{\keystroke{\bftt{#1}}}
 
 % stolen from minted.dtx
-\newenvironment{exampletwoup}
-  {\VerbatimEnvironment
-   \begin{VerbatimOut}{example.out}}
-  {\end{VerbatimOut}
-   \setlength{\parindent}{0pt}
-   \fbox{\begin{tabular}{l|l}
-   \begin{minipage}{0.55\linewidth}
-     \inputminted[fontsize=\small,resetmargins]{latex}{example.out}
-   \end{minipage} &
-   \begin{minipage}{0.35\linewidth}
-     \input{example.out}
-   \end{minipage}
-   \end{tabular}}}
-
-\newenvironment{exampletwouptiny}
-  {\VerbatimEnvironment
-   \begin{VerbatimOut}{example.out}}
-  {\end{VerbatimOut}
-   \setlength{\parindent}{0pt}
-   \fbox{\begin{tabular}{l|l}
-   \begin{minipage}{0.55\linewidth}
-     \inputminted[fontsize=\scriptsize,resetmargins]{latex}{example.out}
-   \end{minipage} &
-   \begin{minipage}{0.35\linewidth}
-     \setlength{\parskip}{6pt plus 1pt minus 1pt}%
-     \raggedright\scriptsize\input{example.out}
-   \end{minipage}
-   \end{tabular}}}
-
 \newenvironment{exampletwouptinynoframe}
   {\VerbatimEnvironment
    \begin{VerbatimOut}{example.out}}

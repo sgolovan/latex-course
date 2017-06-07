@@ -26,9 +26,12 @@
 \tcbuselibrary{skins}
 \tcbuselibrary{listings}
 \tcbuselibrary{minted}
+\tcbset{colframe=mDarkTeal, colback=white!90!mDarkTeal,% Taken from the Metropolis theme
+        left=0.8em,right=0.8em}
 \newtcolorbox{tblock}[1]{boxsep=1mm,sidebyside=false,bicolor=false,colback=white,title={#1}}
 \newtcolorbox{printout}{boxsep=0mm,sidebyside=false,bicolor=false,colback=white}
-\def\ovllink#1{\tcbox[on line,boxsep=0mm,colback=white]{#1}}
+\def\ovllink#1{\tcbox[on line,boxsep=0mm,left=2pt,right=2pt,top=2pt,bottom=2pt,
+                      colback=white]{#1}}
 \newtcblisting{code}{boxsep=0mm,listing only,minted language=latex}
 \newtcblisting{exampletwoup}{fontupper=\small,fontlower=\small,
                              boxsep=0mm,listing side text,minted language=latex,

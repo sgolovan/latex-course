@@ -1,0 +1,24 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{fontspec}
+\setmainfont{CMU Serif}
+\begin{document}
+
+Пусть $X_1, X_2, \dots, X_n$ --- последовательность независимых
+одинаково распределённых случайных величин, для которых
+$\operatorname{E}[X_i] = \mu$ и
+$\operatorname{Var}[X_i] = \sigma^2 < \infty$, и пусть
+\begin{equation*}
+S_n = \frac{1}{n}\sum_{i=1}^{n} X_i
+\end{equation*}
+обозначает их среднее арифметическое. Тогда при $n$,
+стремящемся к бесконечности, последовательность случайных
+величин $\sqrt{n}(S_n - \mu)$ сходится по распределению
+к нормальной $N(0, \sigma^2)$ величине.
+
+% бонусные очки: нормальное распределение N обычно обозначается
+% каллиграфическим шрифтом; этого можно добиться вот таким
+% способом: $\mathcal{N}(0, \sigma^2)$.
+
+\end{document}
+

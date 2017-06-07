@@ -14,24 +14,24 @@ part2.pdf: part2.tex preamble.tex structure-title.pdf structure-sections.pdf str
 	lualatex -shell-escape part2
 	lualatex -shell-escape part2
 
-structure-title.pdf: structure-title.tex
-	lualatex structure-title
+structure-title.pdf: structure-title.tex structure-wrapper.tex
+	lualatex --jobname=structure-title '\input{structure-wrapper} \input{structure-title}'
 
-structure-sections.pdf: structure-sections.tex
-	lualatex structure-sections
+structure-sections.pdf: structure-sections.tex structure-wrapper.tex
+	lualatex --jobname=structure-sections '\input{structure-wrapper} \input{structure-sections}'
 
-structure-crossref.pdf: structure-crossref.tex
-	lualatex structure-crossref
-	lualatex structure-crossref
+structure-crossref.pdf: structure-crossref.tex structure-wrapper.tex
+	lualatex --jobname=structure-crossref '\input{structure-wrapper} \input{structure-crossref}'
+	lualatex --jobname=structure-crossref '\input{structure-wrapper} \input{structure-crossref}'
 
 structure-exercise-solution.pdf: structure-exercise-solution.tex
 	lualatex structure-exercise-solution
 	lualatex structure-exercise-solution
 	lualatex structure-exercise-solution
 
-media-graphics.pdf: media-graphics.tex
-	lualatex media-graphics
-	lualatex media-graphics
+media-graphics.pdf: media-graphics.tex structure-wrapper.tex
+	lualatex --jobname=media-graphics '\input{structure-wrapper} \input{media-graphics}'
+	lualatex --jobname=media-graphics '\input{structure-wrapper} \input{media-graphics}'
 
 bib-example.pdf: bib-example.tex bib-example.bib
 	lualatex bib-example

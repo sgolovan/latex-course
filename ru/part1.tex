@@ -214,7 +214,7 @@
 \begin{frame}[fragile]{\insertsubsection{}: особенности}
 \vspace{-2ex}
 \small
-Следует также отметить, что в печатной продукции встречаются три
+Следует также отметить, что в печатной продукции встречаются четыре
 вида <<тире>>. В \LaTeX{} они вводятся специальным образом:
 \vspace{-1ex}
 \begin{description}
@@ -229,7 +229,7 @@
 \begin{exampletwouptiny}
 Бело-голубые цвета.
 
-Теорема Гаусса--Маркова, с.~2--7.
+Теорема Гаусса--Маркова.
 
 Единица --- ноль!
 
@@ -289,25 +289,48 @@ even be above it.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Набор математики}
-\begin{frame}[fragile]{\insertsubsection{}: Dollar Signs}
+
+\begin{frame}[fragile]{\insertsubsection{}: Значки доллара}
 \begin{itemize}
-\item Why are dollar signs \keystrokebftt{\$} special? We use them to mark mathematics in text.\\[1ex]
+\item Что такого особенного в значках доллара \keystrokebftt{\$}, Они применяются
+для переключения в математический режим в тексте.\\[1ex]
 \begin{exampletwouptiny}
-% not so good:
-Let a and b be distinct positive
-integers, and let c = a - b + 1.
+% результат так себе:
+Пусть a и b --- два разных
+натуральных числа и пусть
+c = a - b + 1.
 
-% much better:
-Let $a$ and $b$ be distinct positive
-integers, and let $c = a - b + 1$.
+% так намного лучше:
+Пусть $a$ и $b$ --- два разных
+натуральных числа и пусть
+$c = a - b + 1$.
 \end{exampletwouptiny}
-\item Always use dollar signs in pairs --- one to begin the mathematics, and one
-to end it.
-\item \LaTeX{} handles spacing automatically; it ignores your spaces.
-\begin{exampletwouptiny}
-Let $y=mx+b$ be \ldots
+\item Всегда ставьте знаки доллара парами --- один чтобы начать математической
+  формулы, другой чтобы её закончить.
+\end{itemize}
+\end{frame}
 
-Let $y = m x + b$ be \ldots
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{\insertsubsection{}: Особенности}
+\begin{itemize}
+\item \LaTeX{} расставляет пробелы в математическом режиме самостоятельно, он
+  игнорирует пробелы, которые вы поставили.
+
+\vspace{2pt}
+\begin{exampletwouptiny}
+Пусть $y=mx+b$ --- \ldots
+
+Пусть $y = m x + b$ --- \ldots
+\end{exampletwouptiny}
+
+\item Используйте <<крышку>> \keystrokebftt{\char94} для верхних индексов и
+  подчёркивание \keystrokebftt{\_} для нижних.
+
+\vspace{2pt}
+\begin{exampletwouptiny}
+$y = c_2 x^2 + c_1 x + c_0$
 \end{exampletwouptiny}
 \end{itemize}
 \end{frame}
@@ -316,15 +339,7 @@ Let $y = m x + b$ be \ldots
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{\insertsubsection{}: Обозначения}
-\vspace{-3ex}
 \begin{itemize}
-\item Используйте <<крышку>> \keystrokebftt{\char94} для верхних индексов и
-  подчёркивание \keystrokebftt{\_} для нижних.
-
-\begin{exampletwouptiny}
-$y = c_2 x^2 + c_1 x + c_0$
-\end{exampletwouptiny}
-
 \item Используйте фигурные скобки \keystrokebftt{\{} \keystrokebftt{\}} для
 группировки верхних и нижних индексов.
 
@@ -334,7 +349,8 @@ $F_n = F_n-1 + F_n-2$ % ой!
 $F_n = F_{n-1} + F_{n-2}$
 \end{exampletwouptiny}
 
-\item Греческие буквы и математические операции набираются с помощью команд.
+\item Греческие буквы и математические операции набираются с помощью команд
+  с говорящими именами.
 
 \begin{exampletwouptiny}
 $\mu = A e^{Q/RT}$
@@ -558,7 +574,7 @@ $\sqrt{n}(S_n - \mu)$ сходится по распределению к нор
 \item Указание: Символ $\infty$ набирается как \cmdbs{infty}.
 \item Когда попробуете,
 \ovllink{\href{\wlnewdoc{basics-exercise-2-solution.tex}}{%
-щёлкните, чтобы увидеть решение}}.
+щёлкните, чтобы посмотреть решение}}.
 \end{itemize}
 \end{frame}
 

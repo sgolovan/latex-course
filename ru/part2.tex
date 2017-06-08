@@ -195,14 +195,15 @@ presentation for links to more information.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection[fragile]{Плавающие объекты}
+
 \begin{frame}{\insertsubsection}
-\vspace{-1ex}
+\vspace{-2ex}
 \begin{itemize}
-\item Allow \LaTeX{} to decide where the figure will go (it can ``float'').
-\item You can also give the figure a caption, which can be referenced with
-\cmdbs{ref}.
+\item Позвольте \LaTeX{} решить, куда поставить рисунок (он может <<плавать>>).
+\item Также можно снабдить рисунок номером и подписью, на которые потом можно
+  ссылаться с помощью \cmdbs{ref}.
 \end{itemize}
-\vspace{-5ex}
+\vspace{-6ex}
 \begin{minipage}[t]{0.55\linewidth}
 \inputcode[minted options={fontsize=\scriptsize}]{media-graphics.tex}
 \end{minipage}~~%
@@ -214,27 +215,30 @@ presentation for links to more information.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Tables}
+\subsection{Таблицы}
+
 \begin{frame}[fragile]{\insertsubsection}
+\vspace{-3ex}
 \begin{itemize}
-\item Tables in \LaTeX{} take some getting used to.
-\item Use the \bftt{tabular} environment from the \bftt{tabularx} package.
-\item The argument specifies column alignment --- \textbf{l}eft, \textbf{r}ight, \textbf{r}ight.
+\item Чтобы привыкнуть к таблицам в \LaTeX{}, нужно время.
+\item Можно воспользоваться окружением \bftt{tabular}.
+\item Аргумент задаёт выравнивание колонок --- \textbf{l}eft, \textbf{r}ight, \textbf{r}ight.
 \begin{exampletwouptiny}
 \begin{tabular}{lrr}
-Item   & Qty & Unit \$ \\
-Widget & 1   & 199.99  \\
-Gadget & 2   & 399.99  \\
-Cable  & 3   & 19.99   \\
+Прод.  & \# & Цена \$ \\
+Гаджет & 1  & 199.99  \\
+Виджет & 2  & 399.99  \\
+Кабель & 3  & 19.99   \\
 \end{tabular}
 \end{exampletwouptiny}
-\item It also specifies vertical lines; use \cmdbs{hline} for horizontal lines.
+\vspace{-1ex}
+\item В нём также задаются вертикальные линии; команда \cmdbs{hline} проводит горизонтальную линию.
 \begin{exampletwouptiny}
 \begin{tabular}{|l|r|r|} \hline
-Item   & Qty & Unit \$ \\\hline
-Widget & 1   & 199.99  \\
-Gadget & 2   & 399.99  \\
-Cable  & 3   & 19.99   \\\hline
+Прод.  & \# & Цена \$ \\\hline
+Виджет & 1  & 199.99  \\
+Гаджет & 2  & 399.99  \\
+Кабель & 3  & 19.99   \\\hline
 \end{tabular}
 \end{exampletwouptiny}
 \item Use an ampersand \keystrokebftt{\&} to separate columns and a double backslash \keystrokebftt{\bs}\keystrokebftt{\bs} to start a new row (like in the \bftt{align*} environment that we saw in part 1).
@@ -245,12 +249,12 @@ Cable  & 3   & 19.99   \\\hline
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \addtocontents{toc}{\newpage}
-\section{Bibliographies}
+\section{Библиография}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Outline}
+\begin{frame}{Обзор}
 \begin{multicols}{2}
 \tableofcontents[currentsection]
 \end{multicols}
@@ -259,12 +263,13 @@ Cable  & 3   & 19.99   \\\hline
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{bib\TeX}
+\subsection{Biblatex}
 \begin{frame}[fragile]{\insertsubsection{} 1}
+\vspace{-2ex}
 \begin{itemize}
-\item Put your references in a \bftt{.bib} file in `bibtex' database format:
-\inputminted[fontsize=\scriptsize,frame=single]{latex}{bib-example.bib}
-\item Most reference managers can export to bibtex format.
+\item Сохраните ваши ссылки в \bftt{.bib} файле формата `bibtex':
+\inputbibtexcode[minted options={fontsize=\scriptsize}]{bib-example.bib}
+\item Большинство менеджеров ссылок могут экспортировать в формат bibtex.
 \end{itemize}
 \end{frame}
 
@@ -273,17 +278,18 @@ Cable  & 3   & 19.99   \\\hline
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{\insertsubsection{} 2}
 \begin{itemize}
-\item Each entry in the \bftt{.bib} file has a \emph{key} that you can use to
-reference it in the document. For example, \bftt{Jacobson1999Towards} is the key for this article:
-\begin{minted}[fontsize=\small,frame=single]{latex}
-@Article{Jacobson1999Towards,
-  author = {Van Jacobson},
-  ...
+\item Каждый элемент в \bftt{.bib} файле включает \emph{ключ}, с помощью которого
+на него можно ссылаться в документе. Например, \bftt{semenov2003paradox} это
+ключ для этой статьи:
+\begin{bibtexcode}
+@article{semenov2003paradox,
+  author = {Семёнов, Владимир},
 }
-\end{minted}
-\item It's a good idea to use a key based on the name, year and title.
-\item \LaTeX{} can automatically format your in-text citations and generate a
-list of references; it knows most standard styles, and you can design your own.
+\end{bibtexcode}
+\item Хорошие ключи получаются из комбинаций имени автора, года и названия.
+\item \LaTeX{} с помощью пакета \bftt{biblatex} автоматически отформатирует
+цитаты в тексте и сгенерирует список литературы; он поддерживает большинство
+стандартных стилей, но вы всегда можете разработать свой собственный.
 \end{itemize}
 \end{frame}
 
@@ -291,18 +297,21 @@ list of references; it knows most standard styles, and you can design your own.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{\insertsubsection{} 3}
+\vspace{-3ex}
+\small
 \begin{itemize}
-\item Use the \bftt{natbib} package\footnote{There is a new package with more
-  features named \bftt{biblatex} but most of the articles templates still use
-  \bftt{natbib}.} with \cmdbs{citet} and \cmdbs{citep}.
-\item Reference \cmdbs{bibliography} at the end, and specify a \cmdbs{bibliographystyle}.
+\item Используйте пакет \bftt{biblatex}\footnote{\scriptsize Многие шаблоны статей используют
+\bftt{natbib} вместе с \bftt{bibtex}. Но эта связка не поддерживает русский язык.}
+и команды \cmdbs{cite} and \cmdbs{parencite}.
+\item Включите файл со ссылками через \cmdbs{addbibresource} и выведите список
+литературы через \cmdbs{printbibliography}.
 \end{itemize}
+\vspace{-2ex}
 \begin{minipage}{0.55\linewidth}
-\inputminted[fontsize=\scriptsize,frame=single,resetmargins]{latex}%
-  {bib-example.tex}
-\end{minipage}
-\begin{minipage}{0.35\linewidth}
-\includegraphics[width=\textwidth,clip,trim=1.8in 5in 1.8in 1in]{bib-example.pdf}
+\inputcode[minted options={fontsize=\scriptsize}]{bib-example.tex}
+\end{minipage}~~%
+\begin{minipage}{0.45\linewidth}
+\includegraphics[width=\textwidth,clip,viewport=0cm 232mm 5.2cm 297mm]{bib-example.pdf}
 \end{minipage}
 \end{frame}
 

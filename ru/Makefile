@@ -34,10 +34,10 @@ media-graphics.pdf: media-graphics.tex structure-wrapper.tex
 	lualatex --jobname=media-graphics '\input{structure-wrapper} \input{media-graphics}'
 
 bib-example.pdf: bib-example.tex bib-example.bib
-	lualatex bib-example
-	bibtex bib-example
-	lualatex bib-example
-	lualatex bib-example
+	lualatex --jobname=bib-example '\input{structure-wrapper} \input{bib-example}'
+	biber bib-example
+	lualatex --jobname=bib-example '\input{structure-wrapper} \input{bib-example}'
+	lualatex --jobname=bib-example '\input{structure-wrapper} \input{bib-example}'
 
 #
 # Part 3

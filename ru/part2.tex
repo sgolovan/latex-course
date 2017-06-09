@@ -2,7 +2,7 @@
 
 \input{preamble.tex}
 
-\subtitle{Часть 2: Структурированные документы \& ещё кое что}
+\subtitle{Часть 2: Структурированные документы и ещё кое что}
 
 \begin{document}
 
@@ -21,7 +21,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Обзор}
+\begin{frame}{План}
 \begin{multicols}{2}
 \tableofcontents[currentsection]
 \end{multicols}
@@ -32,22 +32,24 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{\insertsection}
 \begin{itemize}
-\item In Part 1, we learned about commands and environments for typesetting text
-and mathematics.
-\item Now, we'll learn about commands and environments for structuring
-documents.
-\item You can try out the new commands in Overleaf:
+\item В первой части мы узнали о командах и об окружениях, использующихся
+  для набора текста и математических формул.
+\item Теперь мы изучим команды и окржения для структурирования документов.
+\item Как и раньше, пробуйте вводить новые команды в Overleaf:
 \end{itemize}
-\vskip 2em
+\vspace{2em}
 \begin{center}
-\fbox{\href{\wlnewdoc{basics.tex}}{%
-Click here to open the example document in \wllogo{}}}
-\\[1ex]\scriptsize{}
-For best results, please use \href{http://www.google.com/chrome}{Google Chrome} or a recent \href{http://www.mozilla.org/en-US/firefox/new/}{FireFox}.
+\begin{printout}
+\href{\wlnewdoc{basics.tex}}{Щёлкните здесь, чтобы открыть пример документа в \wllogo{}}
+\end{printout}
+\scriptsize{}
+Для лучшего результата воспользуйтесь браузером
+\href{http://www.google.com/chrome}{Google Chrome} или новой версией браузера
+\href{http://www.mozilla.org/en-US/firefox/new/}{FireFox}.
 \end{center}
-\vskip 2ex
+\vspace{1ex}
 \begin{itemize}
-\item Let's get started!
+\item Начнём же!
 \end{itemize}
 \end{frame}
 
@@ -139,12 +141,12 @@ click here to see my solution}}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Figures and Tables}
+\section{Рисунки и таблицы}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Outline}
+\begin{frame}{План}
 \begin{multicols}{2}
 \tableofcontents[currentsection]
 \end{multicols}
@@ -153,12 +155,12 @@ click here to see my solution}}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Graphics}
+\subsection{Иллюстрации}
 \begin{frame}[fragile]{\insertsubsection}
 \begin{itemize}
-\item Requires the \bftt{graphicx} package, which provides the
-\cmdbs{includegraphics} command.
-\item Supported graphics formats include JPEG, PNG and PDF (usually).
+\item Требуют пакет \bftt{graphicx}, в котором предоставляется команда
+\cmdbs{includegraphics}.
+\item Поддерживаемые графические форматы включают JPEG, PNG и PDF (обычно).
 \end{itemize}
 \begin{exampletwouptiny}
 \includegraphics[
@@ -169,25 +171,29 @@ click here to see my solution}}.
   angle=270]{big_chick}
 \end{exampletwouptiny}
 
-\tiny{Image from \url{http://www.andy-roberts.net/writing/latex/importing_images}}
+\tiny{Рисунок взят с \url{http://www.andy-roberts.net/writing/latex/importing_images}}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{Interlude: Optional Arguments}
+\begin{frame}[fragile]{Отступление: Необязательные аргументы}
+\vspace{-2ex}
 \begin{itemize}
-\item We use square brackets \keystrokebftt{[} \keystrokebftt{]} for optional
-arguments, instead of braces \keystrokebftt{\{} \keystrokebftt{\}}.
-\item \cmdbs{includegraphics} accepts optional arguments that allow you to transform the
-image when it is included. For example, \bftt{width=0.3\cmdbs{textwidth}} makes
-the image take up 30\% of the width of the surrounding text (\cmdbs{textwidth}).
-\item \cmdbs{documentclass} accepts optional arguments, too. Example:
+\item Для указания необязательных аргументов вместо скобок фигурных
+(\keystrokebftt{\{} \keystrokebftt{\}}) используются квадратные скобки
+\keystrokebftt{[} \keystrokebftt{]}.
+\item \cmdbs{includegraphics} принимает необязательные аргументы, которые
+позволяют преобразовать рисунок при включении его в документ. Например,
+\bftt{width=0.3\cmdbs{textwidth}} меняет размеры рисунка так, чтобы его
+ширина была равна 30\% ширины окружающего его текста (\cmdbs{textwidth}).
+\item \cmdbs{documentclass} тоже принимает необязательные аргументы.
+Например,
 \mint{latex}|\documentclass[12pt,twocolumn]{article}|
-\vskip 3ex
-makes the text bigger (12pt) and puts it into two columns.
-\item Where do you find out about these? See the slides at the end of this
-presentation for links to more information.
+увеличит шрифт текста (12pt) и инструктирует \LaTeX{} размещать его в две
+колонки.
+\item Где вам узнать про все эти возможности? В самом конце этой
+презентации содержатся ссылки на ресурсы с полезной информацией.
 \end{itemize}
 \end{frame}
 
@@ -254,7 +260,7 @@ presentation for links to more information.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Обзор}
+\begin{frame}{План}
 \begin{multicols}{2}
 \tableofcontents[currentsection]
 \end{multicols}
@@ -345,7 +351,7 @@ Add an image and a bibliography to the paper from the previous exercise.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Outline}
+\begin{frame}{План}
 \begin{multicols}{2}
 \tableofcontents[currentsection]
 \end{multicols}

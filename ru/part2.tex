@@ -118,23 +118,24 @@
 \begin{tblock}{Наберите этот короткий документ в \LaTeX:\footnotemark}
 \begin{printout}
 \href{\fileuri/structure-exercise-solution.pdf}{%
-Click to open the paper}
+Щёлкните, чтобы открыть статью}
 \end{printout}
-Make your paper look like this one. Use \cmdbs{ref} and \cmdbs{eqref} to avoid
-explicitly writing section and equation numbers into the text.
+Попытайтесь добиться того, чтобы ваша статья выглядела как эта. Используйте
+\cmdbs{ref} и \cmdbs{eqref}, чтобы не писать номера разделов и уравнений в
+тексте явно.
 \end{tblock}
 \footnotetext{From \url{http://pdos.csail.mit.edu/scigen/}, a random
 paper generator.}
 \vskip 2ex
 \begin{printout}
 \href{\wlnewdoc{structure-exercise.tex}}{%
-Click to open this exercise in \wllogo{}}
+Щёлкните, чтобы открыть упражнение в \wllogo{}}
 \end{printout}
 
 \begin{itemize}
-\item Once you've tried,
+\item Когда попробуете,
 \ovllink{\href{\wlnewdoc{structure-exercise-solution.tex}}{%
-click here to see my solution}}.
+щёлкните, чтобы посмотреть решение}}.
 \end{itemize}
 \end{frame}
 
@@ -324,21 +325,22 @@ click here to see my solution}}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Exercise}
-\begin{frame}[fragile]{Exercise: Putting it All Together}
+\subsection{Упражнение}
+\begin{frame}[fragile]{Упражнение: соберите всё вместе}
 
-Add an image and a bibliography to the paper from the previous exercise.
+Вставьте рисунок и список литературы в статью из предыдущего упражнения.
 
 \begin{enumerate}
-\item Download these example files to your computer.
+\item Загрузите эти два файла на ваш компьютер.
+\vspace{1ex}
+\begin{printout}
+\href{\fileuri/big_chick.png?dl=1}{Щёлкните, чтобы загрузить пример рисунка}
+\end{printout}
+\begin{printout}
+\href{\fileuri/bib-exercise.bib?dl=1}{Щёлкните, чтобы загрузить приммер bib файла}
+\end{printout}
 
-\begin{center}
-\fbox{\href{\fileuri/big_chick.png?dl=1}{Click to download example image}}
-
-\fbox{\href{\fileuri/bib-exercise.bib?dl=1}{Click to download example bib file}}
-\end{center}
-
-\item Upload them to Overleaf (use the project menu).
+\item Загрузите их на Overleaf (используйте меню проекта).
 
 \end{enumerate}
 \end{frame}
@@ -346,7 +348,7 @@ Add an image and a bibliography to the paper from the previous exercise.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{What's Next?}
+\section{Что дальше?}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -360,24 +362,26 @@ Add an image and a bibliography to the paper from the previous exercise.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{More Neat Things}
+\subsection{Ещё больше изящных возможностей}
 \begin{frame}[fragile]{\insertsubsection}
 \begin{itemize}
-\item Add the \cmdbs{tableofcontents} command to generate a table of contents
-from the \cmdbs{section} commands.
+\item Вставьте команду \cmdbs{tableofcontents}, и она сгенерирует оглавление,
+собрав заголовки, введённые командами \cmdbs{section} и \cmdbs{subsection}.
 
-\item Change the \cmdbs{documentclass} to
+\item Измените \cmdbs{documentclass} на
 \mint{latex}!\documentclass{scrartcl}!
-or
+или
 \mint{latex}!\documentclass[12pt]{IEEEtran}!
 
-\item Define your own command for a complicated equation:
+\item Определите свои собственные команды, чтобы избежать повторения набора
+  сложных конструкций:
 \begin{exampletwouptiny}
 \newcommand{\rperf}{%
   \rho_{\text{perf}}}
-$$
-\rperf = {\bf c}'{\bf X} + \varepsilon
-$$
+\[
+\rperf = \mathbf{c}'\mathbf{X}
+       + \varepsilon
+\]
 \end{exampletwouptiny}
 \end{itemize}
 \end{frame}
@@ -385,57 +389,61 @@ $$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{More Neat Packages}
+\subsection{Ещё больше изящных пакетов}
 \begin{frame}{\insertsubsection}
 \begin{itemize}
-\item \bftt{beamer}: for presentations (like this one!)
-\item \bftt{todonotes}: comments and TODO management
-\item \bftt{tikz}: make amazing graphics
-\item \bftt{pgfplots}: create graphs in \LaTeX
-\item \bftt{listings}: source code printer for \LaTeX
-\item \bftt{spreadtab}: create spreadsheets in \LaTeX
-\item \bftt{gchords}, \bftt{guitar}: guitar chords and tabulature
-\item \bftt{cwpuzzle}: crossword puzzles
+  \item \bftt{beamer}: для презентаций (таких как эта!)
+\item \bftt{todonotes}: комментарии и отметки <<что ещё сделать>>
+\item \bftt{tikz}: потрясающая графическая библиотека
+\item \bftt{pgfplots}: создание графиков в \LaTeX
+\item \bftt{listings}: вывод листингов программного кода для \LaTeX
+\item \bftt{spreadtab}: создание таблиц в \LaTeX
+\item \bftt{gchords}, \bftt{guitar}: гитарные аккорды и табулатуры
+\item \bftt{cwpuzzle}: кроссворды
 \end{itemize}
-See \url{https://www.overleaf.com/latex/examples} and \url{http://texample.net}
-for examples of (most of) these packages.
+Примеры применения этих и других пакетов можно найти на
+\url{https://www.overleaf.com/latex/examples} и \url{http://texample.net}.
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Installing \LaTeX{}}
+\subsection{Установка \LaTeX{}}
 \begin{frame}{\insertsubsection}
 \begin{itemize}
-\item To run \LaTeX{} on your own computer, you'll want to use a \LaTeX{}
-\emph{distribution}. A distribution includes a \bftt{latex} program
-and (typically) several thousand packages.
+\item Для запуска \LaTeX{} на вашем собственном компьютере вам понадобится установить
+\emph{дистрибутив} \LaTeX{}. Типичный дистрибутив включает в себя программу \bftt{latex}
+(скорее понадобится \bftt{pdflatex} или \bftt{lualatex}) и несколько тысяч пакетов.
 \begin{itemize}
-\item On Windows: \href{http://miktex.org/}{Mik\TeX} or \href{http://tug.org/texlive/}{\TeX Live}
-\item On Linux: \href{http://tug.org/texlive/}{\TeX Live}
-\item On Mac: \href{http://tug.org/mactex/}{Mac\TeX}
+\item Для Windows: \href{http://miktex.org/}{Mik\TeX} или \href{http://tug.org/texlive/}{\TeX Live}
+\item Для Linux: \href{http://tug.org/texlive/}{\TeX Live}
+\item Для MacOS X: \href{http://tug.org/mactex/}{Mac\TeX}
 \end{itemize}
-\item You'll also want a text editor with \LaTeX{} support. See \url{http://en.wikipedia.org/wiki/Comparison_of_TeX_editors} for a list of (many) options.
-\item You'll also have to know more about how \bftt{latex} and its related tools
-work --- see the resources on the next slide.
+\item Также вам понадобится текстовый редактор с поддержкой \LaTeX{}. Множество
+вариантов можно посмотреть по ссылке
+\href{http://en.wikipedia.org/wiki/Comparison_of_TeX_editors}%
+{\mbox{\texttt{http://en.wikipedia.org/wiki/Comparison\_of\_TeX\_editors}}}.
+\item Вам также понадобится информация о том, как именно запускать \bftt{latex},
+как он и сопутствующие программы работают. На следующем слайде приведён список
+полезных информационных ресурсов.
 \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Online Resources}
+\subsection{Онлайновые ресурсы}
 \begin{frame}{\insertsubsection}
 \begin{itemize}
-\item \href{http://en.wikibooks.org/wiki/LaTeX}{The \LaTeX{} Wikibook} ---
-excellent tutorials and reference material.
-\item \href{http://tex.stackexchange.com/}{\TeX{} Stack Exchange} --- ask
-questions and get excellent answers incredibly quickly
-\item \href{http://www.latex-community.org/}{\LaTeX{} Community} --- a large
-online forum
-\item \href{http://ctan.org/}{Comprehensive \TeX{} Archive Network (CTAN)} ---
-over four thousand packages plus documentation
-\item Google will usually get you to one of the above.
+\item \href{http://en.wikibooks.org/wiki/LaTeX}{Викибук о \LaTeX{}} ---
+Отличные вводные и справочные материалы.
+\item \href{http://tex.stackexchange.com/}{\TeX{} Stack Exchange} --- задайте
+вопрос и получите исчерпывающий ответ, причём очень быстро.
+\item \href{http://www.latex-community.org/}{Сообщество \LaTeX{}} --- большой
+онлайновый форум.
+\item \href{http://ctan.org/}{Всеобъемлющая сеть архивов \TeX{} (CTAN)} ---
+более четырёх тысяч пакетов плюс документация.
+\item Google обычно отсылает на один из перечисленных ресурсов.
 \end{itemize}
 \end{frame}
 
@@ -444,7 +452,7 @@ over four thousand packages plus documentation
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 \begin{center}
-Thanks, and happy \TeX{}ing!
+Спасибо и приятного \TeX{}анья!
 \end{center}
 \end{frame}
 

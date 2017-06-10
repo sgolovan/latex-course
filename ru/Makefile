@@ -53,7 +53,7 @@ recap-exercise-solution.pdf: recap-exercise-solution.tex
 	lualatex recap-exercise-solution
 
 recap-structure.pdf: recap-structure.tex
-	lualatex recap-structure
+	lualatex --jobname=recap-structure '\input{structure-wrapper} \input{recap-structure}'
 
 beamer-minimal.pdf: beamer-minimal.tex
 	lualatex beamer-minimal

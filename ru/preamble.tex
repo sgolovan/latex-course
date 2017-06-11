@@ -43,6 +43,11 @@
                                  minted options={fontsize=\footnotesize},
                                  bicolor,colbacklower=white,
                                  righthand ratio=0.42}
+\newtcblisting{exampletwouppaused}{fontupper=\footnotesize,fontlower=\footnotesize,
+                             boxsep=0mm,listing side text,minted language=latex,
+                             minted options={fontsize=\footnotesize},
+                             bicolor,colbacklower=white,
+                             righthand ratio=0.42,after lower=\onslide<1->}
 \newtcbinputlisting{\inputcode}[2][]{%
 listing file={#2},boxsep=0mm,listing only,minted language=latex,#1}
 \newtcbinputlisting{\inputbibtexcode}[2][]{%

@@ -422,19 +422,20 @@ $c = a - b + 1$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Анимация}
+\begin{frame}[fragile]
+\frametitle{\insertsection: Анимация}
 \begin{itemize}
 \item Один фрейм может генерировать несколько слайдов.
 \item Применяйте команду \cmdbs{pause}, чтобы показать только часть слайда.
 \vskip 2ex
-\begin{exampletwouptiny}
+\begin{exampletwouppaused}
 \begin{itemize}
 \item Чувствуете
 \pause \item предвкушение?
 \end{itemize}
-\end{exampletwouptiny}
+\end{exampletwouppaused}
 \vskip 2ex
-\item<2> Существует много более гибких способов создавать анимацию в \bftt{beamer};
+\item<2-> Существует много более гибких способов создавать анимацию в \bftt{beamer};
 сотрите также команды \cmdbs{only}, \cmdbs{alt} и \cmdbs{uncover}.
 \end{itemize}
 \end{frame}
@@ -442,28 +443,27 @@ $c = a - b + 1$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Упражнение}
-
-Recreate Peter Norvig's excellent ``Gettysburg Powerpoint Presentation'' in \bftt{beamer}.\footnote{\url{http://norvig.com/Gettysburg}}
+\begin{frame}[fragile]
+\frametitle{\insertsection: Упражнение}
+Воссоздайте прекрасную <<Презентацию о Геттисберге>> Питера Норвига в
+\bftt{beamer}.\footnote{\url{http://norvig.com/Gettysburg}}
 
 \begin{enumerate}
-\item Open this exercise in \wllogo{}:
-\begin{center}
-\fbox{\href{\wlnewdoc{beamer-exercise.tex}}{%
-Click to open this exercise in \wllogo{}}}
-\end{center}
-\vskip 2ex
+\item Откройте это упражнение в \wllogo{}:
+\begin{printout}
+\href{\wlnewdoc{beamer-exercise.tex}}{%
+Click to open this exercise in \wllogo{}}
+\end{printout}
 \item Download this image to your computer and upload it to \wllogo{} via the
 files menu.
-\begin{center}
-\fbox{\href{\fileuri/gettysburg_graph.png?dl=1}{Click to download image}}
-\end{center}
-\vskip 2ex
+\begin{printout}
+\href{\fileuri/gettysburg_graph.png?dl=1}{Click to download image}
+\end{printout}
 \item Add \LaTeX{} commands to the text to make it look like this one:
-\begin{center}
-\fbox{\href{\fileuri/beamer-exercise-solution.pdf}{%
-Click to open the model document}}
-\end{center}
+\begin{printout}
+\href{\fileuri/beamer-exercise-solution.pdf}{%
+Click to open the model document}
+\end{printout}
 \end{enumerate}
 \end{frame}
 

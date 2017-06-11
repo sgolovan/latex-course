@@ -228,7 +228,7 @@
 
 \begin{frame}[fragile]{\insertsubsection}
 \vspace{-3ex}
-\begin{itemize}
+\begin{itemize}\small
 \item Чтобы привыкнуть к таблицам в \LaTeX{}, нужно время.
 \item Можно воспользоваться окружением \bftt{tabular}.
 \item Аргумент задаёт выравнивание колонок --- \textbf{l}eft, \textbf{r}ight, \textbf{r}ight.
@@ -237,7 +237,6 @@
 Прод.  & \# & Цена \$ \\
 Гаджет & 1  & 199.99  \\
 Виджет & 2  & 399.99  \\
-Кабель & 3  & 19.99   \\
 \end{tabular}
 \end{exampletwouptiny}
 \vspace{-1ex}
@@ -246,11 +245,12 @@
 \begin{tabular}{|l|r|r|} \hline
 Прод.  & \# & Цена \$ \\\hline
 Виджет & 1  & 199.99  \\
-Гаджет & 2  & 399.99  \\
-Кабель & 3  & 19.99   \\\hline
+Гаджет & 2  & 399.99  \\\hline
 \end{tabular}
 \end{exampletwouptiny}
-\item Use an ampersand \keystrokebftt{\&} to separate columns and a double backslash \keystrokebftt{\bs}\keystrokebftt{\bs} to start a new row (like in the \bftt{align*} environment that we saw in part 1).
+\item Амперсанд \keystrokebftt{\&} разделяет колонки, а двойная обратная косая
+  \keystrokebftt{\bs}\keystrokebftt{\bs} начинает новую строку (как в окружении
+  \bftt{align*} из первой \rlap{части).}
 \end{itemize}
 \end{frame}
 

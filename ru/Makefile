@@ -52,11 +52,11 @@ recap-exercise.pdf: recap-exercise.tex
 recap-exercise-solution.pdf: recap-exercise-solution.tex
 	lualatex recap-exercise-solution
 
-recap-structure.pdf: recap-structure.tex
+recap-structure.pdf: recap-structure.tex structure-wrapper.tex
 	lualatex --jobname=recap-structure '\input{structure-wrapper} \input{recap-structure}'
 
-beamer-minimal.pdf: beamer-minimal.tex
-	lualatex beamer-minimal
+beamer-minimal.pdf: beamer-minimal.tex beamer-wrapper.tex
+	lualatex --jobname=beamer-minimal '\input{beamer-wrapper} \input{beamer-minimal}'
 
 beamer-theme.pdf: beamer-theme.tex
 	lualatex beamer-theme

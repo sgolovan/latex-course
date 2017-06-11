@@ -196,56 +196,55 @@ $c = a - b + 1$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Presentations with \protect\bftt{beamer}}
+\section{Презентации в \protect\bftt{beamer}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{\insertsection}
+\vspace{-1ex}
 \begin{itemize}
-\item Beamer is a package for creating presentations (such as this one!) in
+  \item Beamer это пакет для создания презентаций (таких как эта, кстати!) в
 \LaTeX{}.
-\item It provides the \bftt{beamer} document class.
-\item Use the \bftt{frame} environment to create slides.
+\item Он предоставляет класс документа \bftt{beamer}.
+\item Окружение \bftt{frame} применяется для создания слайдов.
 \end{itemize}
 \begin{minipage}{0.55\linewidth}
-\inputminted[fontsize=\scriptsize,frame=single,resetmargins]{latex}%
-  {beamer-minimal.tex}
-\end{minipage}
-\begin{minipage}{0.35\linewidth}
+\inputcode[minted options={fontsize=\scriptsize}]{beamer-minimal.tex}
+\end{minipage}~~%
+\begin{minipage}{0.5\linewidth}
 % trim: l b r t
-\includegraphics[width=\textwidth,clip,trim=1in 1in 1in 1in]{beamer-minimal.pdf}
+\includegraphics[width=\textwidth,clip,trim=1.33in 1in 1.33in 1in]{beamer-minimal.pdf}
 \end{minipage}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Following Along}
+\begin{frame}[fragile]{\insertsection: Следование примерам}
 
 \begin{itemize}
-\item As we go through the following slides, try out the examples by typing them
-into the example document on \wllogo.
+\item Пока мы будем проходить следующие слайды, пробуйте примеры из них, набирая
+  их в примере документа в \wllogo.
 \end{itemize}
 \vskip 2ex
-\begin{center}
-\fbox{\href{\wlnewdoc{beamer-minimal.tex}}{%
-Click to open the example document in \wllogo{}}}
-\end{center}
+\begin{printout}
+\href{\wlnewdoc{beamer-minimal.tex}}{%
+Щёлкните, чтобы открыть пример документа в \wllogo{}}
+\end{printout}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]
-\frametitle{\insertsection: Frames}
+\frametitle{\insertsection: Фреймы}
 \begin{itemize}
-\item Use \cmdbs{frametitle} to give the frame a title.
-\item Then add content to the frame.
-\item The source for this frame looks like:
+\item Используйте команду \cmdbs{frametitle}, чтобы задать название фрейму.
+\item Потом добавьте содержимое фрейма.
+\item Исходный код фрейма выглядит примерно так:
 \vskip 2ex
-\inputminted[fontsize=\scriptsize,frame=single,resetmargins]{latex}%
-  {beamer-frame.tex}
+\inputcode[minted options={fontsize=\scriptsize}]{beamer-frame.tex}
 \end{itemize}
 \end{frame}
 

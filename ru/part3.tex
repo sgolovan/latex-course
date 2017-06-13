@@ -824,30 +824,33 @@ $c = a - b + 1$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Notes with \protect\bftt{todonotes}}
+\section{Заметки в \protect\bftt{todonotes}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{\insertsection}
+\vspace{-1ex}
 \begin{itemize}
-\item The \cmdbs{todo} command from the \bftt{todonotes} package is great for
-leaving notes to yourself and your collaborators.
-\begin{exampletwouptiny}
-\todo{add results}
-\todo[color=blue!20]{fix method}
-\end{exampletwouptiny}
-\vskip 2ex
-\item Pro Tip: define your own commands with \cmdbs{newcommand}
-\begin{minted}[fontsize=\scriptsize,frame=single]{latex}
+\item Команда \cmdbs{todo} из
+\genhref{https://www.ctan.org/pkg/todonotes}{пакета \bftt{todonotes}} прекрасно
+подойдёт, чтобы оставлять в тексте заметки для себя и соавторов.
+\begin{exampletwoup}
+\todo{внести результаты}
+\todo[color=blue!20]{удалить}
+\end{exampletwoup}
+\vspace{1ex}
+\item Совет профессионала: определяйте свои собственные команды с помощью
+\cmdbs{newcommand}
+\begin{code}
 \newcommand{\alice}[1]{\todo[color=green!40]{#1}}
 \newcommand{\bob}[1]{\todo[color=purple!40]{#1}}
-\end{minted}
-This can save a lot of typing:
-\begin{exampletwouptiny}
-\alice{add results}
-\bob{fix method}
-\end{exampletwouptiny}
+\end{code}
+Это сэкономит много времени при наборе:
+\begin{exampletwoup}
+\alice{внести результаты}
+\bob{удалить}
+\end{exampletwoup}
 \end{itemize}
 \end{frame}
 
@@ -858,9 +861,9 @@ This can save a lot of typing:
 \begin{columns}
   \begin{column}{0.4\textwidth}
     \begin{itemize}
-    \item Only inline notes are supported with beamer, but margin notes are
-    supported for normal documents.
-    \item There is also a handy \cmdbs{listoftodos} command.
+    \item Beamer поддерживает только заметки внутри текста, а обычные документы
+    также и заметки на полях.
+    \item Также существует полезная команда \cmdbs{listoftodos}.
     \end{itemize}
   \end{column}
   \begin{column}{0.6\textwidth}
@@ -882,7 +885,7 @@ This can save a lot of typing:
 \item Теперь, когда вы знаете, как \LaTeX{} может заменить Word и PowerPoint,
 как насчёт Excel?
 \item Домашнее задание: попробуйте
-\hrefbox{http://www.ctan.org/pkg/spreadtab}{пакет \bftt{spreadtab}}!
+\genhref{https://www.ctan.org/pkg/spreadtab}{пакет \bftt{spreadtab}}!
 \end{itemize}
 \end{frame}
 
@@ -891,7 +894,7 @@ This can save a lot of typing:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 \begin{center}
-Thanks, and happy \TeX{}ing!
+Спаисбо и приятного \TeX{}анья!
 \end{center}
 \end{frame}
 

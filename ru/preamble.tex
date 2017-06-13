@@ -20,6 +20,7 @@
 \usepackage{tabularx}
 \usepackage{tikz}
 \usepackage{tcolorbox}
+\usepackage{xparse}
 
 % For slide 28 (Tikz examples)
 \usetikzlibrary{mindmap,trees}
@@ -60,7 +61,20 @@ listing file={#2},boxsep=0mm,listing only,minted language=latex,#1}
 \newtcbinputlisting{\inputbibtexcode}[2][]{%
 listing file={#2},boxsep=0mm,listing only,minted language=bibtex,#1}
 
-\newcommand{\hrefbox}[2]{\href{#1}{\linkbox{#2}}}
+\DeclareDocumentCommand{\linkbox}{O{mDarkTeal}m}{%
+\tcbox[on line,
+       boxsep=0mm,
+       left=2pt,
+       right=2pt,
+       top=2pt,
+       bottom=2pt,
+       colframe=#1,
+       colback=#1,
+       coltext=white]{#2}}
+
+\newcommand{\genhref}[2]{\href{#1}{\linkbox{#2}}}
+\newcommand{\filhref}[2]{\href{\fileuri/#1}{\linkbox{#2}}}
+\newcommand{\ovlhref}[2]{\href{\wlnewdoc{#1}}{\linkbox[green!30!black]{#2}}}
 
 % only inline todonotes work
 \usepackage{xkeyval}

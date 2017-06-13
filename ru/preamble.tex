@@ -60,6 +60,8 @@ listing file={#2},boxsep=0mm,listing only,minted language=latex,#1}
 \newtcbinputlisting{\inputbibtexcode}[2][]{%
 listing file={#2},boxsep=0mm,listing only,minted language=bibtex,#1}
 
+\newcommand{\hrefbox}[2]{\href{#1}{\linkbox{#2}}}
+
 % only inline todonotes work
 \usepackage{xkeyval}
 \usepackage[textsize=small]{todonotes}

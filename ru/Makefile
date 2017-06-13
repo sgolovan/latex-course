@@ -42,7 +42,7 @@ bib-example.pdf: bib-example.tex bib-example.bib
 #
 # Part 3
 #
-part3.pdf: part3.tex preamble.tex recap-structure.pdf recap-exercise.pdf recap-exercise-solution.pdf beamer-minimal.pdf beamer-theme.pdf beamer-exercise.pdf beamer-exercise-solution.pdf
+part3.pdf: part3.tex preamble.tex recap-structure.pdf recap-exercise.pdf recap-exercise-solution.pdf beamer-minimal.pdf beamer-theme.pdf beamer-exercise.pdf beamer-exercise-solution.pdf escher-brick-penrose-triangle.tex computer-science-mindmap.tex gajski-kuhn-y-chart.tex
 	lualatex -shell-escape part3
 	lualatex -shell-escape part3
 

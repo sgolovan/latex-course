@@ -676,138 +676,18 @@ $c = a - b + 1$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{\insertsection: Примеры}
 \begin{itemize}
-\item Check out \linkbox{\href{http://texample.net/tikz/}{\TeX{}ample.net}} for many \tikzname{} examples:
+\item Загляните на \genhref{http://texample.net/tikz/}{\TeX{}ample.net}, там
+много примеров рисунков в \tikzname{}:
 \end{itemize}
 \begin{figure}
-\hspace*{-5mm}%
-\href{http://texample.net/tikz/examples/escher-brick-penrose-triangle/}{%
-\begin{tabular}[b]{c}
-\begin{tikzpicture}[scale=1.5, line join=bevel]
-  % \a and \b are two macros defining characteristic
-  % dimensions of the impossible brick.
-  \pgfmathsetmacro{\a}{0.18}
-  \pgfmathsetmacro{\b}{1.37}
-  \tikzset{%
-    apply style/.code={\tikzset{#1}},
-    brick_edges/.style={thick,draw=black},
-    face_colourA/.style={fill=gray!50},
-    face_colourB/.style={fill=gray!25},
-    face_colourC/.style={fill=gray!90},
-  }
-  \foreach \theta/\v/\facestyleone/\facestyletwo in {%
-    0/0/{brick_edges,face_colourA}/{brick_edges,face_colourC},
-    180/-\a/{brick_edges,face_colourB}/{brick_edges,face_colourC}
-  }{
-  \begin{scope}[rotate=\theta,shift={(\v,0)}]
-    \draw[apply style/.expand once=\facestyleone]  		
-      ({-.5*\b},{1.5*\a}) --
-      ++(\b,0)            --
-      ++(-\a,-\a)         --
-      ++({-\b+2*\a},0)    --
-      ++(0,-{2*\a})       --
-      ++(\b,0)            --
-      ++(-\a,-\a)         --
-      ++(-\b,0)           --
-      cycle;
-    \draw[apply style/.expand once=\facestyletwo] 
-      ({.5*\b},{1.5*\a})  --
-      ++(0,{-2*\a})       --
-      ++(-\a,0)           --
-      ++(0,\a)            --
-      cycle;
-    \end{scope}
-  }
-\end{tikzpicture}\\
-\begin{tikzpicture}[scale=0.33, line join=bevel]
-% \a and \b are two macros defining characteristic
-% dimensions of the Penrose triangle.		
-\pgfmathsetmacro{\a}{2.5}
-\pgfmathsetmacro{\b}{0.9}
-\tikzset{%
-  apply style/.code     = {\tikzset{#1}},
-  triangle_edges/.style = {thick,draw=black}
-}
-\foreach \theta/\facestyle in {%
-    0/{triangle_edges, fill = gray!50},
-  120/{triangle_edges, fill = gray!25},
-  240/{triangle_edges, fill = gray!90}%
-}{
-  \begin{scope}[rotate=\theta]
-    \draw[apply style/.expand once=\facestyle]
-      ({-sqrt(3)/2*\a},{-0.5*\a})                     --
-      ++(-\b,0)                                       --
-        ({0.5*\b},{\a+3*sqrt(3)/2*\b})                -- % higher point	
-        ({sqrt(3)/2*\a+2.5*\b},{-.5*\a-sqrt(3)/2*\b}) -- % rightmost point
-      ++({-.5*\b},-{sqrt(3)/2*\b})                    -- % lower point
-        ({0.5*\b},{\a+sqrt(3)/2*\b})                  --
-      cycle;
-    \end{scope}
-  }	
-\end{tikzpicture}%
-\end{tabular}%
-}%
 \hspace*{-4mm}%
+\href{http://texample.net/tikz/examples/escher-brick-penrose-triangle/}{%
+\scalebox{0.33}{\input{escher-brick-penrose-triangle}}}%
+\hspace*{-3mm}%
 \href{http://texample.net/tikz/examples/computer-science-mindmap/}{%
-\scalebox{0.35}{%
-\begin{tikzpicture}
-  \path[mindmap,concept color=black,text=white]
-    node[concept] {Computer Science}
-    [clockwise from=0]
-    child[concept color=green!50!black] {
-      node[concept] {practical}
-      [clockwise from=90]
-      child { node[concept] {algorithms} }
-      child { node[concept] {data structures} }
-      child { node[concept] {pro\-gramming languages} }
-      child { node[concept] {software engineer\-ing} }
-    }  
-    child[concept color=blue] {
-      node[concept] {applied}
-      [clockwise from=-30]
-      child { node[concept] {databases} }
-      child { node[concept] {WWW} }
-    }
-    child[concept color=red] { node[concept] {technical} }
-    child[concept color=orange] { node[concept] {theoretical} };
-\end{tikzpicture}%
-}}%
+\scalebox{0.35}{\input{computer-science-mindmap}}}%
 \href{http://texample.net/tikz/examples/gajski-kuhn-y-chart/}{%
-\scalebox{0.4}{%
-\begin{tikzpicture}[>=stealth',join=bevel,font=\sffamily,auto,on grid,decoration={markings,
-  mark=at position .5 with \arrow{>}}]
-  %\input{y_chart_common}
-  \coordinate (behaviouralNode) at (135:4cm);
-  \coordinate (structuralNode) at (45:4cm);
-  \coordinate (physicalNode) at (270:4cm);
-  \coordinate (originNode) at (0:0cm);
-  \node [above=1em] at (behaviouralNode) {\textbf{Behavioural Domain}};
-  \node [above=1em] at (structuralNode) {\textbf{Structural Domain}};
-  \node [below=1em] at (physicalNode) {\textbf{Physical Domain}};
-  \draw[-, very thick] (behaviouralNode.south) -- (0,0) node[left,pos=0]{Systems} node[left,pos=0.2]{Algorithms} node[left,pos=0.4]{Register transfers} node[left,pos=0.6]{Logic} node[left,pos=0.8]{Transfer functions};
-  \draw[-, very thick] (structuralNode.south) -- (0,0) node[pos=0]{ } node[pos=0.2]{Processors} node[pos=0.4]{ALUs, RAM, etc.} node[pos=0.6]{Gates, flip-flops, etc.} node[pos=0.8]{Transistors};
-  \draw[-, very thick] (physicalNode.south) -- (0,0) node[right,pos=0]{Physical partitions} node[right,pos=0.2]{Floorplans} node[right,pos=0.4]{Module layout} node[right,pos=0.6]{Cell layout} node[right,pos=0.8]{Transistor layout};
-  \draw[fill] (barycentric cs:behaviouralNode=1.0,originNode=0) circle (2pt);
-  \draw[fill] (barycentric cs:behaviouralNode=0.8,originNode=0.2) circle (2pt);
-  \draw[fill] (barycentric cs:behaviouralNode=0.6,originNode=0.4) circle (2pt);
-  \draw[fill] (barycentric cs:behaviouralNode=0.4,originNode=0.6) circle (2pt);
-  \draw[fill] (barycentric cs:behaviouralNode=0.2,originNode=0.8) circle (2pt);
-  \draw[fill] (barycentric cs:structuralNode=1.0,originNode=0) circle (2pt);
-  \draw[fill] (barycentric cs:structuralNode=0.8,originNode=0.2) circle (2pt);
-  \draw[fill] (barycentric cs:structuralNode=0.6,originNode=0.4) circle (2pt);
-  \draw[fill] (barycentric cs:structuralNode=0.4,originNode=0.6) circle (2pt);
-  \draw[fill] (barycentric cs:structuralNode=0.2,originNode=0.8) circle (2pt);
-  \draw[fill] (barycentric cs:physicalNode=1.0,originNode=0) circle (2pt);
-  \draw[fill] (barycentric cs:physicalNode=0.8,originNode=0.2) circle (2pt);
-  \draw[fill] (barycentric cs:physicalNode=0.6,originNode=0.4) circle (2pt);
-  \draw[fill] (barycentric cs:physicalNode=0.4,originNode=0.6) circle (2pt);
-  \draw[fill] (barycentric cs:physicalNode=0.2,originNode=0.8) circle (2pt);
-  \draw[black!50] (0,0) circle (4.0cm);
-  \draw[black!50] (0,0) circle (3.2cm);
-  \draw[black!50] (0,0) circle (2.4cm);
-  \draw[black!50] (0,0) circle (1.6cm);
-  \draw[black!50] (0,0) circle (0.8cm);
-\end{tikzpicture}%
-}}%
+\scalebox{0.4}{\input{gajski-kuhn-y-chart}}}%
 \end{figure}
 \end{frame}
 

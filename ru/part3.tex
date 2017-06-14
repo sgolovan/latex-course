@@ -173,13 +173,11 @@ $c = a - b + 1$.
 \begin{enumerate}
 \item Вот текст небольшой статьи:\footnote{Основана на \url{http://www.cgd.ucar.edu/cms/agu/scientific_talk.html}}
 \begin{center}
-\ovllink{\href{\wlnewdoc{recap-exercise.tex}}{%
-Щёлкните, чтобы открыть упражнение в \wllogo{}}}
+\ovlhref{recap-exercise.tex}{Щёлкните, чтобы открыть упражнение в \wllogo{}}
 \end{center}
 \item Вставьте в него команды \LaTeX{} и сделайте, чтобы он выглядел как этот:
 \begin{center}
-\linkbox{\href{\fileuri/recap-exercise-solution.pdf}{%
-Щёлкните, чтобы открыть образец}}
+\filhref{recap-exercise-solution.pdf}{Щёлкните, чтобы открыть образец}
 \end{center}
 \end{enumerate}
 \begin{tblock}{Указания}
@@ -229,8 +227,7 @@ $c = a - b + 1$.
 \end{itemize}
 \vskip 2ex
 \begin{center}
-\ovllink{\href{\wlnewdoc{beamer-minimal.tex}}{%
-Щёлкните, чтобы открыть пример документа в \wllogo{}}}
+\ovlhref{beamer-minimal.tex}{Щёлкните, чтобы открыть пример документа в \wllogo{}}
 \end{center}
 \end{frame}
 
@@ -445,26 +442,27 @@ $c = a - b + 1$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]
 \frametitle{\insertsection: Упражнение}
+\vspace{-2ex}
 Воссоздайте прекрасную <<Презентацию о Геттисберге>> Питера Норвига в
 \bftt{beamer}.\footnote{\url{http://norvig.com/Gettysburg}}
-
 \begin{enumerate}
 \item Откройте это упражнение в \wllogo{}:
-\begin{printout}
-\href{\wlnewdoc{beamer-exercise.tex}}{%
-Щёлкните, чтобы открыть упражнение в \wllogo{}}
-\end{printout}
-\item Скачайте этот рисунок на ваш компьютер и загрузите его на \wllogo{}
-  через меню файлов.
-\begin{printout}
-\href{\fileuri/gettysburg_graph.png?dl=1}{Щёлкните, чтобы скачать рисунок}
-\end{printout}
+\begin{center}
+\ovlhref{beamer-exercise.tex}{Щёлкните, чтобы открыть упражнение в \wllogo{}}
+\end{center}
+\item Обратите внимание на фрагмент
+\begin{code}
+\begin{tikzpicture}
+  ...
+\end{tikzpicture}
+\end{code}
+Это рисунок, нарисованный в \tikzname{} (мы обсудим это позже).
 \item Вставьте команды \LaTeX{} в текст, чтобы сделать его похожим на этот:
-\begin{printout}
-\href{\fileuri/beamer-exercise-solution.pdf}{%
-Щёлкните, чтобы открыть образец документа}
-\end{printout}
+\begin{center}
+\filhref{beamer-exercise-solution.pdf}{Щёлкните, чтобы открыть образец документа}
+\end{center}
 \end{enumerate}
+\vspace{1ex}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -484,19 +482,7 @@ $c = a - b + 1$.
 \vspace{-1ex}
 \begin{figure}
 \href{http://www.texample.net/tikz/examples/rotated-triangle/}{%
-\begin{tikzpicture}[scale=0.33]
-    \coordinate (A) at (0,0);
-    \coordinate (B) at (-60:12cm);
-    \coordinate (C) at (240:12cm);
-    \foreach \density in {20,30,...,160}{%
-        \draw[fill=MidnightBlue!\density] (A)--(B)--(C)--cycle;
-        \path
-             (A) coordinate (X)
-          -- (B) coordinate[pos=.15](A)
-          -- (C) coordinate[pos=.15](B)
-          -- (X) coordinate[pos=.15](C);
-    }
-\end{tikzpicture}
+\input{rotated-triangle}%
 }
 \end{figure}
 \vspace{-1ex}
@@ -660,7 +646,7 @@ $c = a - b + 1$.
 \draw[<->,thick]
   (0,2) -- (0,-2);
 % ось x
-\draw[ ->,thick] (0,0) -- (7,0); 
+\draw[->,thick] (0,0) -- (7,0); 
 % кривые
 \draw[cyan,domain=0:2*pi]
   plot (\x, {sin(\x r)});
@@ -747,7 +733,7 @@ $c = a - b + 1$.
     \end{itemize}
   \end{column}
   \begin{column}{0.6\textwidth}
-    \includegraphics[width=\textwidth,page=1]{todonotes-example}
+    \includegraphics[width=\textwidth,clip,viewport=0cm 187mm 9cm 297mm]{todonotes-example}
   \end{column}
 \end{columns}
 \end{frame}

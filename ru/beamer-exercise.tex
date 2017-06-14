@@ -2,7 +2,7 @@
 
 \usepackage{cmbright} % Математика "без засечек"
 \usepackage{fontspec}
-\setsansfont{CMU Sans}
+\setsansfont{CMU Sans Serif}
 \usepackage[russian]{babel}
 \usepackage{pgfplots} % Диаграмма
 
@@ -46,7 +46,25 @@ Shared vision:
 
 Organizational Overview
 
-(include graph here)
+\begin{tikzpicture}
+\begin{axis}[
+  width=7cm,
+  height=5cm,
+  symbolic x coords={$-87$ лет, сейчас},
+  xtick=data,
+  nodes near coords,
+  ybar=6pt,
+  enlargelimits=0.2,
+  every axis plot/.append style=thick,
+  axis line style = thick
+  ]
+\addplot coordinates {
+  ($-87$ лет,   1)
+  (сейчас,  0)
+};
+\legend{Новые нации};
+\end{axis}
+\end{tikzpicture}
 
 Four Score and Seven
 

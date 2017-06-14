@@ -1,0 +1,29 @@
+\documentclass{article}
+\usepackage{fontspec}
+\setmainfont{CMU Serif}
+\usepackage[russian]{babel}
+\usepackage[width=6cm,height=10cm,left=0pt,top=0pt]{geometry}
+
+\usepackage[colorinlistoftodos]{todonotes}
+\makeatletter
+\@todonotes@SetTodoListName{Список что сделать}%
+\@todonotes@SetMissingFigureText{Рисунок}%
+\@todonotes@SetMissingFigureUp{Отсутствует}%
+\@todonotes@SetMissingFigureDown{рисунок}%
+\makeatother
+
+\begin{document}
+\listoftodos
+\section{Самосинхронизация}
+Самосинхронизацию в
+\todo{a как обстоят дела с UTF-16?}
+UTF-8 можно рассмотреть когда вашей программе
+подаются случайные байты и вам нужно определить начало первого
+символа. Первичным признаком является сброшенный старший бит байта
+--- это ASCII-символ. Если же он установлен, то пропускаем те
+байты, у которых сброшен бит перед
+\todo[color=green!50]{что если теряется несколько битов?}
+старшим.
+В остальных случаях
+можно продолжать посимвольное поточное раскодирование.
+\end{document}

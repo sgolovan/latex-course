@@ -42,7 +42,7 @@ bib-example.pdf: bib-example.tex bib-example.bib
 #
 # Part 3
 #
-part3.pdf: part3.tex preamble.tex recap-structure.pdf recap-exercise.pdf recap-exercise-solution.pdf beamer-minimal.pdf beamer-theme.pdf beamer-exercise.pdf beamer-exercise-solution.pdf escher-brick-penrose-triangle.tex computer-science-mindmap.tex gajski-kuhn-y-chart.tex
+part3.pdf: part3.tex preamble.tex recap-structure.pdf recap-exercise.pdf recap-exercise-solution.pdf beamer-minimal.pdf beamer-theme.pdf beamer-exercise.pdf beamer-exercise-solution.pdf todonotes-example.pdf escher-brick-penrose-triangle.tex computer-science-mindmap.tex gajski-kuhn-y-chart.tex rotated-triangle.tex
 	lualatex -shell-escape part3
 	lualatex -shell-escape part3
 
@@ -67,6 +67,10 @@ beamer-exercise.pdf: beamer-exercise.tex
 beamer-exercise-solution.pdf: beamer-exercise-solution.tex
 	lualatex beamer-exercise-solution
 	lualatex beamer-exercise-solution
+
+todonotes-example.pdf: todonotes-example.tex
+	lualatex todonotes-example
+	lualatex todonotes-example
 
 latex-course.tgz: part1.pdf part2.pdf part3.pdf basics-exercise-1-solution.tex basics-exercise-1.tex basics-exercise-2-solution.tex basics-exercise-2.tex basics.tex bib-example.tex preamble.tex structure-exercise-solution.tex structure-exercise-solution.pdf structure-exercise.tex big_chick.png bib-exercise.bib recap-exercise.tex recap-exercise-solution.pdf beamer-minimal.tex beamer-exercise.tex beamer-exercise-solution.pdf gettysburg_graph.png
 	tar czf latex-course.tgz $^

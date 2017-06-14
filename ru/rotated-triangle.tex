@@ -1,0 +1,13 @@
+\begin{tikzpicture}[scale=0.33]
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (-60:12cm);
+    \coordinate (C) at (240:12cm);
+    \foreach \density in {20,30,...,160}{%
+        \draw[fill=MidnightBlue!\density] (A)--(B)--(C)--cycle;
+        \path
+             (A) coordinate (X)
+          -- (B) coordinate[pos=.15](A)
+          -- (C) coordinate[pos=.15](B)
+          -- (X) coordinate[pos=.15](C);
+    }
+\end{tikzpicture}

@@ -4,8 +4,9 @@ all: part1.pdf part2.pdf part3.pdf
 # Part 1
 #
 part1.pdf: part1.tex preamble.tex
-	lualatex -shell-escape part1
-	lualatex -shell-escape part1
+	latexmk -pdf -pdflatex="lualatex --shell-escape %O %S" part1.tex
+
+.PHONY: part1.pdf
 
 #
 # Part 2

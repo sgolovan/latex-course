@@ -1,10 +1,13 @@
+LUALATEX = lualatex --shell-escape %O %S
+LUALATEX2 = lualatex --jobname=%B "\input{structure-wrapper} \input{%S}"
+
 all: part1.pdf part2.pdf part3.pdf
 
 #
 # Part 1
 #
 part1.pdf: part1.tex preamble.tex
-	latexmk -pdf -pdflatex="lualatex --shell-escape %O %S" part1.tex
+	latexmk -pdf -pdflatex='$(LUALATEX)' part1.tex
 
 .PHONY: part1.pdf
 
@@ -16,7 +19,9 @@ part2.pdf: part2.tex preamble.tex structure-title.pdf structure-sections.pdf str
 	lualatex -shell-escape part2
 
 structure-title.pdf: structure-title.tex structure-wrapper.tex
-	lualatex --jobname=structure-title '\input{structure-wrapper} \input{structure-title}'
+	latexmk -pdf -pdflatex='$(LUALATEX2)' structure-title.tex
+
+.PHONY: structure-title.pdf
 
 structure-sections.pdf: structure-sections.tex structure-wrapper.tex
 	lualatex --jobname=structure-sections '\input{structure-wrapper} \input{structure-sections}'

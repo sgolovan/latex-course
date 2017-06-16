@@ -1,6 +1,6 @@
 LUALATEX = lualatex --shell-escape %O %S
 LUALATEX2 = lualatex --jobname=%B "\input{structure-wrapper} \input{%S}"
-LUALATEX2 = lualatex --jobname=%B "\input{beamer-wrapper} \input{%S}"
+LUALATEX3 = lualatex --jobname=%B "\input{beamer-wrapper} \input{%S}"
 
 all: part1.pdf part2.pdf part3.pdf
 

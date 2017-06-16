@@ -81,7 +81,7 @@ latex-course.tgz: part1.pdf part2.pdf part3.pdf basics-exercise-1-solution.tex \
 
 clean:
 	rm -rf *.log *.aux *.out *.nav *.snm *.toc *.vrb *.pyg *.bbl *.blg \
-		*.listing *.fdb_latexmk *.fls _minted-* \
+		*.listing *.fdb_latexmk *.fls *.tdo *.bcf *.run.xml _minted-* \
 		structure-crossref.pdf structure-sections.pdf structure-title.pdf \
 		media-graphics.pdf bib-example.pdf recap-structure.pdf
 

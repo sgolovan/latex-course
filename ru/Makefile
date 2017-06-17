@@ -15,7 +15,7 @@ part1.pdf: part1.tex preamble.tex
 #
 part2.pdf: part2.tex preamble.tex structure-title.pdf structure-sections.pdf \
 	   structure-crossref.pdf structure-exercise-solution.pdf \
-	   media-graphics.pdf bib-example.pdf
+	   structure-exercise-full-solution.pdf media-graphics.pdf bib-example.pdf
 	latexmk -pdf -pdflatex='$(LUALATEX)' $<
 
 structure-title.pdf: structure-title.tex structure-wrapper.tex
@@ -28,6 +28,9 @@ structure-crossref.pdf: structure-crossref.tex structure-wrapper.tex
 	latexmk -pdf -pdflatex='$(LUALATEX2)' $<
 
 structure-exercise-solution.pdf: structure-exercise-solution.tex
+	latexmk -lualatex $<
+
+structure-exercise-full-solution.pdf: structure-exercise-full-solution.tex
 	latexmk -lualatex $<
 
 media-graphics.pdf: media-graphics.tex structure-wrapper.tex

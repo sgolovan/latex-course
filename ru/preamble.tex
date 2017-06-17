@@ -124,24 +124,8 @@ listing file={#2},boxsep=0mm,listing only,minted language=bibtex,#1}
 }
 \newcommand{\keystrokebftt}[1]{\keystroke{\bftt{#1}}}
 
-% stolen from minted.dtx
-\newenvironment{exampletwouptinynoframe}
-  {\VerbatimEnvironment
-   \begin{VerbatimOut}{example.out}}
-  {\end{VerbatimOut}
-   \setlength{\parindent}{0pt}
-   \begin{tabular}{l|l}
-   \begin{minipage}{0.55\linewidth}
-     \inputminted[fontsize=\scriptsize,resetmargins]{latex}{example.out}
-   \end{minipage} &
-   \begin{minipage}{0.35\linewidth}
-     \setlength{\parskip}{6pt plus 1pt minus 1pt}%
-     \raggedright\scriptsize\input{example.out}
-   \end{minipage}
-   \end{tabular}}
-
 \title{Интерактивное введение в \LaTeX}
-\author{Джон Д. Лис-Миллер\\Перевод на русский язык: Сергей Головань}
+\author{Джон Д. Лис-Миллер\\Перевод на русский язык и адаптация: Сергей Головань}
 %\titlegraphic{%
 %\includegraphics[height=36pt]{overleaf}\\[1em]
 %\includegraphics[height=24pt]{UoB-logo}

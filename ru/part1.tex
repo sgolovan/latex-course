@@ -134,7 +134,7 @@
 \begin{frame}[fragile]
 \frametitle{\insertsubsection{} в \wllogo}
 \begin{itemize}
-\item Overleaf --- это вебсайт, позволяющий набирать документы \LaTeX{} в интернете.
+\item \wllogo{} --- это вебсайт, позволяющий набирать документы \LaTeX{} в интернете.
 \item Он <<компилирует>> ваш текст \LaTeX{} автоматически и показывает результат.
 \begin{center}
 \ovlhref{basics.tex}{Щёлкните здесь, чтобы открыть пример документа в \wllogo{}}
@@ -147,7 +147,7 @@
 \end{center}
 \vspace{1ex}
 \item В дальнейшем при просмотре слайдов пробуйте набирать рассматриваемые
-  примеры в Overleaf.
+  примеры в \wllogo{}.
 \item \textbf{Нет, правда, вы должны их попробовать по мере просмотра!}
 \end{itemize}
 \end{frame}
@@ -189,19 +189,18 @@
 \vspace{-3ex}
 \small
 \begin{itemize}
-\item Символы кавычек вводятся хитро: используются символы \keystroke{<} и
-  \keystroke{>} для <<ёлочек>>, и запятая \keystroke{,} с обратной кавычкой
-  \keystroke{\char96} для ,,лапок``.
+\item Символы кавычек вводятся хитро: используются символы \keystrokebftt{<} и
+  \keystrokebftt{>} для <<ёлочек>>, и запятая \keystrokebftt{,} с обратной кавычкой
+  \keystrokebftt{\char96} для ,,лапок``.
 \begin{exampletwouptiny}
 Кавычки-ёлочки: <<текст>>.
 
 Кавычки-лапки: ,,текст``.
 \end{exampletwouptiny}
-\item Некоторые часто встречающиеся символы имеют специальный смысл в \LaTeX:
-
+\item Некоторые часто встречающиеся символы имеют специальный смысл в \LaTeX:\\
 \begin{tabular}{cl}
 \keystrokebftt{\%} & значок процента     \\
-\keystrokebftt{\#} & значок диеза / хэша \\
+\keystrokebftt{\#} & значок диеза / решётки \\
 \keystrokebftt{\&} & амперсанд           \\
 \keystrokebftt{\$} & значок доллара      \\
 \end{tabular}
@@ -240,7 +239,7 @@
 
 Единица --- ноль!
 
-$2 - 1 = 0$.
+$3 - 2 = 1$.
 \end{exampletwouptiny}
 \end{frame}
 
@@ -266,7 +265,7 @@ $2 - 1 = 0$.
 \item Исправлять их следует сразу же после обнаружения --- если только что написанный
 текст вызвал ошибку, можно начать отладку с него.
 \item Если проявилось несколько ошибок сразу, начинайте исправлять с самой первой ---
-на самом деле проблема может быть еще выше по тексту.
+на самом деле проблема может быть даже ещё выше по тексту.
 \end{enumerate}
 \end{tblock}
 \end{frame}
@@ -303,7 +302,7 @@ $2 - 1 = 0$.
 \begin{frame}[fragile]
 \frametitle{\insertsubsection{}: Значки доллара}
 \begin{itemize}
-\item Что такого особенного в значках доллара \keystrokebftt{\$}, Они применяются
+\item Что такого особенного в значках доллара \keystrokebftt{\$}? Они применяются
 для переключения в математический режим в тексте.\\[1ex]
 \begin{exampletwouptiny}
 % результат так себе:
@@ -421,7 +420,8 @@ $\Omega=\sum_{k=1}^{n}\omega_k$
 \end{exampletwouptiny}
 \vspace{1ex}
 \item Видите, как $\Sigma$ увеличилась в окружении \bftt{equation}, а также,
-как переместились верхние и нижние индексы, а ведь использовалась та же команда.
+как переместились верхние и нижние индексы, а ведь использовалась одна и та же
+команда.
 \vskip 1ex
 {\scriptsize В принципе, можно было бы писать \bftt{\$...\$} как
 \cmdbegin{math}\bftt{...}\cmdend{math}.}
@@ -436,10 +436,8 @@ $\Omega=\sum_{k=1}^{n}\omega_k$
 \begin{itemize}
 \item Команды \cmdbs{begin} и \cmdbs{end} используются для создания разных
   окружений.
-
 \item Окружения \bftt{itemize} и \bftt{enumerate} печатают списки.
 \vskip 1ex
-
 \begin{exampletwouptiny}
 % ненумерованный список
 \begin{itemize}
@@ -465,14 +463,11 @@ $\Omega=\sum_{k=1}^{n}\omega_k$
 \begin{itemize}
   \item Все команды и окружения, которые мы до сих пор
     использовали,\footnote{Кроме \cmdbs{setmainfont} при подключении шрифта
-    с русскими буквами} были встроены в \LaTeX.
-
+    с русскими буквами.} были встроены в \LaTeX.
 \item \emph{Пакеты} это библиотеки дополнительных команд и окружений.
   Существуют тысячи пакетов в свободном доступе.
-
 \item Чтобы загрузить пакет и пользоваться реализованными в нём командами,
   нужно использовать команду \cmdbs{usepackage} в \emph{преамбуле}.
-
 \item Пример: \bftt{amsmath} от Американского математического общества.
 \begin{code}
 \documentclass{article}
@@ -520,7 +515,8 @@ $\Omega=\sum_{k=1}^{n}\omega_k$
 \frametitle{\insertsubsection{}: Примеры с \bftt{amsmath}}
 \vspace{-2ex}
 \begin{itemize}
-\item Если подходящего оператора не нашлось, можно воспользоваться \cmdbs{operatorname}.
+\item Если подходящего оператора не нашлось, то можно воспользоваться
+  командой \cmdbs{operatorname}.
 \vspace{1ex}
 \begin{exampletwouptiny}
 \begin{equation*}
@@ -606,7 +602,7 @@ $\sqrt{n}(S_n - \mu)$ сходится по распределению к нор
 \begin{frame}
 \frametitle{Конец первой части}
 \begin{itemize}
-\item Поздравляем! Вы уже узнали, как \dots
+\item Поздравляем! Вы уже узнали, как
 \begin{itemize}
 \item Набирать текст в \LaTeX.
 \item Использовать множество разных команд.

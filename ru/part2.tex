@@ -37,12 +37,13 @@
 \begin{itemize}
 \item В первой части мы узнали о командах и об окружениях, использующихся
   для набора текста и математических формул.
-\item Теперь мы изучим команды и окржения для структурирования документов.
-\item Как и раньше, пробуйте вводить новые команды в Overleaf:
+\item Теперь мы изучим команды и окружения для структурирования документов.
+\item Как и раньше, пробуйте вводить новые команды в \wllogo{}:
 \end{itemize}
 \vspace{2ex}
 \begin{center}
 \ovlhref{basics.tex}{Щёлкните здесь, чтобы открыть пример документа в \wllogo{}}
+
 \vspace{1ex}
 \scriptsize
 Для лучшего результата воспользуйтесь браузером
@@ -71,15 +72,15 @@
 \item Компилируйте ваш документ с помощью \bftt{lualatex}.
 \begin{code}
 \usepackage{fontspec}
-\setmainfont{CMU Serif}
-\usepackage[russian]{babel}
+\setmainfont{CMU Serif} % шрифт с русскими буквами
+\usepackage[russian]{babel} % переносы
 \end{code}
 \item Вместо пакета \bftt{fontspec} можно подключить пакеты \bftt{fontenc}
   и \bftt{inputenc} и компилировать документ с помощью \bftt{pdflatex}.
 \begin{code}
-\usepackage[T2A]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[russian]{babel}
+\usepackage[T2A]{fontenc} % шрифт с русскими буквами
+\usepackage[utf8]{inputenc} % кодировка документа
+\usepackage[russian]{babel} % переносы
 \end{code}
 \end{itemize}
 \end{frame}
@@ -223,7 +224,7 @@
 \vspace{-2ex}
 \begin{itemize}
 \item Для указания необязательных аргументов вместо скобок фигурных
-(\keystrokebftt{\{} \keystrokebftt{\}}) используются квадратные скобки
+\keystrokebftt{\{} \keystrokebftt{\}} используются скобки квадратные
 \keystrokebftt{[} \keystrokebftt{]}.
 \item \cmdbs{includegraphics} принимает необязательные аргументы, которые
 позволяют преобразовать рисунок при включении его в документ. Например,
@@ -321,9 +322,10 @@
 \frametitle{\insertsubsection{} 1}
 \vspace{-2ex}
 \begin{itemize}
-\item Сохраните ваши ссылки в \bftt{.bib} файле формата `bibtex':
+\item Сохраните ваши ссылки в \bftt{.bib} файле формата <<bibtex>>:
 \inputbibtexcode[minted options={fontsize=\scriptsize}]{bib-example.bib}
-\item Большинство менеджеров ссылок могут экспортировать в формат bibtex.
+\item Большинство менеджеров библиографических ссылок могут экспортировать в
+  формат bibtex.
 \end{itemize}
 \end{frame}
 

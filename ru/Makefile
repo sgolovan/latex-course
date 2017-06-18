@@ -8,7 +8,7 @@ all: part1.pdf part2.pdf part3.pdf
 # Part 1
 #
 part1.pdf:
-	latexmk -pdf -pdflatex='$(LUALATEX)' $<
+	latexmk -pdf -pdflatex='$(LUALATEX)' $(@:%.pdf=%.tex)
 
 #
 # Part 2
@@ -16,28 +16,28 @@ part1.pdf:
 part2.pdf: structure-title.pdf structure-sections.pdf \
 	   structure-crossref.pdf structure-exercise-solution.pdf \
 	   structure-exercise-full-solution.pdf media-graphics.pdf bib-example.pdf
-	latexmk -pdf -pdflatex='$(LUALATEX)' $<
+	latexmk -pdf -pdflatex='$(LUALATEX)' $(@:%.pdf=%.tex)
 
 structure-title.pdf:
-	latexmk -pdf -pdflatex='$(LUALATEX2)' $<
+	latexmk -pdf -pdflatex='$(LUALATEX2)' $(@:%.pdf=%.tex)
 
 structure-sections.pdf:
-	latexmk -pdf -pdflatex='$(LUALATEX2)' $<
+	latexmk -pdf -pdflatex='$(LUALATEX2)' $(@:%.pdf=%.tex)
 
 structure-crossref.pdf:
-	latexmk -pdf -pdflatex='$(LUALATEX2)' $<
+	latexmk -pdf -pdflatex='$(LUALATEX2)' $(@:%.pdf=%.tex)
 
 structure-exercise-solution.pdf:
-	latexmk -lualatex $<
+	latexmk -lualatex $(@:%.pdf=%.tex)
 
 structure-exercise-full-solution.pdf:
-	latexmk -lualatex $<
+	latexmk -lualatex $(@:%.pdf=%.tex)
 
 media-graphics.pdf:
-	latexmk -pdf -pdflatex='$(LUALATEX2)' $<
+	latexmk -pdf -pdflatex='$(LUALATEX2)' $(@:%.pdf=%.tex)
 
 bib-example.pdf:
-	latexmk -pdf -pdflatex='$(LUALATEX2)' $<
+	latexmk -pdf -pdflatex='$(LUALATEX2)' $(@:%.pdf=%.tex)
 
 #
 # Part 3
@@ -45,31 +45,31 @@ bib-example.pdf:
 part3.pdf: recap-structure.pdf recap-exercise.pdf \
 	   recap-exercise-solution.pdf beamer-minimal.pdf beamer-theme.pdf \
 	   beamer-exercise.pdf beamer-exercise-solution.pdf todonotes-example.pdf
-	latexmk -pdf -pdflatex='$(LUALATEX)' $<
+	latexmk -pdf -pdflatex='$(LUALATEX)' $(@:%.pdf=%.tex)
 
 recap-structure.pdf:
-	latexmk -pdf -pdflatex='$(LUALATEX2)' $<
+	latexmk -pdf -pdflatex='$(LUALATEX2)' $(@:%.pdf=%.tex)
 
 recap-exercise.pdf:
-	latexmk -lualatex $<
+	latexmk -lualatex $(@:%.pdf=%.tex)
 
 recap-exercise-solution.pdf:
-	latexmk -lualatex $<
+	latexmk -lualatex $(@:%.pdf=%.tex)
 
 beamer-minimal.pdf:
-	latexmk -pdf -pdflatex='$(LUALATEX3)' $<
+	latexmk -pdf -pdflatex='$(LUALATEX3)' $(@:%.pdf=%.tex)
 
 beamer-theme.pdf:
-	latexmk -lualatex $<
+	latexmk -lualatex $(@:%.pdf=%.tex)
 
 beamer-exercise.pdf:
-	latexmk -lualatex $<
+	latexmk -lualatex $(@:%.pdf=%.tex)
 
 beamer-exercise-solution.pdf:
-	latexmk -lualatex $<
+	latexmk -lualatex $(@:%.pdf=%.tex)
 
 todonotes-example.pdf:
-	latexmk -lualatex $<
+	latexmk -lualatex $(@:%.pdf=%.tex)
 
 latex-course.tgz: part1.pdf part2.pdf part3.pdf basics-exercise-1-solution.tex \
 		  basics-exercise-1.tex basics-exercise-2-solution.tex \

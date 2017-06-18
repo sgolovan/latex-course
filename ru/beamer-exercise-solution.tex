@@ -9,7 +9,7 @@
 \mode<presentation>
 {
   \usetheme{Boadilla} % or try Darmstadt, Madrid, Dresden, ...
-  \usecolortheme{seahorse} % or try albatross, beaver, crane, ...
+  \usecolortheme{seagull} % or try albatross, beaver, crane, ...
   \usefonttheme{default} % or try serif, structurebold, ...
   \setbeamertemplate{navigation symbols}{}
   \setbeamertemplate{caption}[numbered]
@@ -22,10 +22,12 @@
 
 \usepackage{pgfplots} % Диаграмма
 
-\title{Gettysburg Cemetery Dedication}
+\hypersetup{unicode=true} % Кириллица в закладках PDF
+
+\title{Освящение Геттисбергского кладбища}
 \author{Авраам Линкольн}
 \institute[США]{Соединённые Штаты Америки}
-\date{19 ноября 1863}
+\date{19 ноября 1863 г.}
 
 \begin{document}
 
@@ -33,57 +35,55 @@
   \titlepage
 \end{frame}
 
-\begin{frame}{План}
+\begin{frame}
+\frametitle{План}
   \tableofcontents
 \end{frame}
 
-\section{Agenda}
+\section{Повестка дня}
 
-\begin{frame}{Agenda}
-
+\begin{frame}
+\frametitle{Повестка дня}
 \begin{itemize}
-  \item Met on battlefield (great)
-  \item Dedicate portion of field --- fitting!
-  \item Unfinished work (great tasks)
+  \item Встретились на поле битвы (великом)
+  \item Освятить часть поля --- уместно!
+  \item Неоконченное дело (великие задачи)
 \end{itemize}
-
 \end{frame}
 
-\begin{frame}{Not on Agenda!}
-
+\begin{frame}
+\frametitle{Невозможно включить в повестку дня!}
 \begin{itemize}[<+->]
-  \item Dedicate
-  \item Consecrate
-  \item Hallow (in narrow sense)
-  \item Add or detract
-  \item Note or remember what we say
+  \item Освятить
+  \item Сделать священной
+  \item Одухотворить (в узком смысле)
+  \item Прибавить или убавить
+  \item Заметить или запомнить, что было сказано
 \end{itemize}
-
 \end{frame}
 
-\section{Review}
+\section{Обзор}
 
-\begin{frame}{Key Objectives \& Success Factors}
-
+\begin{frame}
+\frametitle{Ключевые задачи \& составляющие успеха}
 \begin{itemize}
-\item What makes nation unique
+\item Что делает нацию уникальной
   \begin{itemize}
-    \item Conceived in Liberty
-    \item Men are equal
+    \item Рождённая в свободе
+    \item Все люди равны
   \end{itemize}
 \end{itemize}
 
-\begin{block}{Shared vision}
+\begin{block}{Общее видение}
 \begin{itemize}
-\item New birth of freedom.
-\item Gov't of/for/by the people.
+\item Возрождение свободы.
+\item Власть народа, волей народа и для народа.
 \end{itemize}
 \end{block}
-
 \end{frame}
 
-\begin{frame}{Organizational Overview}
-
+\begin{frame}
+\frametitle{Организационный обзор}
 \begin{figure}
 \begin{tikzpicture}
 \begin{axis}[
@@ -95,9 +95,10 @@
   ybar=6pt,
   enlargelimits=0.2,
   every axis plot/.append style=thick,
-  axis line style = thick
+  axis line style = thick,
+  legend style={draw=normal text.fg,fill=normal text.bg}
   ]
-\addplot coordinates {
+\addplot[block title.fg,fill=block title.bg] coordinates {
   ($-87$ лет,   1)
   (сейчас,  0)
 };
@@ -106,36 +107,33 @@
 \end{tikzpicture}
 \end{figure}
 
-\begin{block}{Four Score and Seven}
+\begin{block}{Четыре двадцатилетия и семь}
 \[
 -(4 \times 20 + 7) = -87
 \]
 \end{block}
-
 \end{frame}
 
-\section{Summary}
+\section{Резюме}
 
-\begin{frame}{Summary}
-
+\begin{frame}
+\frametitle{Резюме}
 \begin{columns}
 \begin{column}{0.4\textwidth}
 \begin{itemize}
-\item New nation
-\item Civil war
-\item Dedicate field
+\item Новая нация
+\item Гражданская война
+\item Освятить поле
 \end{itemize}
 \end{column}
 \begin{column}{0.6\textwidth}
 \begin{itemize}
-\item Dedicated to unfinished work
-\item New birth of freedom
-\item Government not perish
+\item Посвятим себя неоконченному делу
+\item Возрождение свободы
+\item Нация не исчезнет с лица земли
 \end{itemize}
 \end{column}
 \end{columns}
-
 \end{frame}
 
 \end{document}
-

@@ -44,7 +44,7 @@ bib-example.pdf:
 #
 part3.pdf: recap-structure.pdf recap-exercise.pdf \
 	   recap-exercise-solution.pdf beamer-minimal.pdf beamer-theme.pdf \
-	   beamer-exercise.pdf beamer-exercise-solution.pdf todonotes-example.pdf
+	   beamer-exercise-solution.pdf todonotes-example.pdf
 	latexmk -pdf -pdflatex='$(LUALATEX)' $(@:%.pdf=%.tex)
 
 recap-structure.pdf:
@@ -60,9 +60,6 @@ beamer-minimal.pdf:
 	latexmk -pdf -pdflatex='$(LUALATEX3)' $(@:%.pdf=%.tex)
 
 beamer-theme.pdf:
-	latexmk -lualatex $(@:%.pdf=%.tex)
-
-beamer-exercise.pdf:
 	latexmk -lualatex $(@:%.pdf=%.tex)
 
 beamer-exercise-solution.pdf:
@@ -95,6 +92,5 @@ clobber: clean
 	structure-exercise-solution.pdf structure-exercise-solution.pdf \
 	media-graphics.pdf bib-example.pdf \
 	part3.pdf recap-structure.pdf recap-exercise.pdf recap-exercise-solution.pdf \
-	beamer-minimal.pdf beamer-theme.pdf beamer-exercise.pdf \
-	beamer-exercise-solution.pdf todonotes-example.pdf \
-	clean clobber all
+	beamer-minimal.pdf beamer-theme.pdf beamer-exercise-solution.pdf \
+	todonotes-example.pdf clean clobber all

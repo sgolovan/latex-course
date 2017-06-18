@@ -5,46 +5,47 @@
 \setsansfont{CMU Sans Serif}
 \usepackage[russian]{babel}
 \usepackage{pgfplots} % Диаграмма
+\hypersetup{unicode=true} % Кириллица в закладках PDF
 
 \begin{document}
 
-Gettysburg Cemetery Dedication
+Освящение Геттисбергского кладбища
 
 Авраам Линкольн
 
 Соединённые Штаты Америки
 
-19 ноября 1863
+19 ноября 1863 г.
 
-\section{Agenda}
+\section{Повестка дня}
 
-Agenda
+Повестка дня
 
-  * Met on battlefield (great)
-  * Dedicate portion of field --- fitting!
-  * Unfinished work (great tasks)
+  * Встретились на поле битвы (великом)
+  * Освятить часть поля --- уместно!
+  * Неоконченное дело (великие задачи)
 
-Not on Agenda!
+Невозможно включить в повестку дня!
 
-  * Dedicate
-  * Consecrate
-  * Hallow (in narrow sense)
-  * Add or detract
-  * Note or remember what we say
+  * Освятить
+  * Сделать священной
+  * Одухотворить (в узком смысле)
+  * Прибавить или убавить
+  * Заметить или запомнить, что было сказано
 
-\section{Review}
+\section{Обзор}
 
-Key Objectives \& Success Factors
+Ключевые задачи \& составляющие успеха
 
-What makes nation unique:
-  * Conceived in Liberty
-  * are equal
+Что делает нацию уникальной
+  * Рождённая в свободе
+  * Все люди равны
 
-Shared vision:
-  * New birth of freedom.
-  * Gov't of/for/by the people.
+Общее видение:
+  * Возрождение свободы.
+  * Власть народа, волей народа и для народа.
 
-Organizational Overview
+Организационный обзор
 
 \begin{tikzpicture}
 \begin{axis}[
@@ -57,8 +58,9 @@ Organizational Overview
   enlargelimits=0.2,
   every axis plot/.append style=thick,
   axis line style = thick
+  legend style={draw=normal text.fg,fill=normal text.bg}
   ]
-\addplot coordinates {
+\addplot[block title.fg,fill=block title.bg] coordinates {
   ($-87$ лет,   1)
   (сейчас,  0)
 };
@@ -66,19 +68,18 @@ Organizational Overview
 \end{axis}
 \end{tikzpicture}
 
-Four Score and Seven
+Четыре двадцатилетия и семь
 
 -(4 * 20 + 7) = -87
 
-\section{Summary}
+\section{Резюме}
 
-* New nation
-* Civil war
-* Dedicate field
+* Новая нация
+* Гражданская война
+* Освятить поле
 
-* Dedicated to unfinished work
-* New birth of freedom
-* Government not perish
+* Посвятим себя неоконченному делу
+* Возрождение свободы
+* Нация не исчезнет с лица земли
 
 \end{document}
-

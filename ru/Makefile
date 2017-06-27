@@ -89,7 +89,7 @@ clobber: clean
 
 .PHONY: part1.pdf \
 	part2.pdf structure-title.pdf structure-sections.pdf structure-crossref.pdf \
-	structure-exercise-solution.pdf structure-exercise-solution.pdf \
+	structure-exercise-solution.pdf structure-exercise-full-solution.pdf \
 	media-graphics.pdf bib-example.pdf \
 	part3.pdf recap-structure.pdf recap-exercise.pdf recap-exercise-solution.pdf \
 	beamer-minimal.pdf beamer-theme.pdf beamer-exercise-solution.pdf \

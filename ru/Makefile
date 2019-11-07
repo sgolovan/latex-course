@@ -73,7 +73,7 @@ latex-course.tgz: part1.pdf part2.pdf part3.pdf basics-exercise-1-solution.tex \
 		  basics-exercise-2.tex basics.tex bib-example.tex preamble.tex \
 		  structure-exercise-solution.tex structure-exercise-solution.pdf \
 		  structure-exercise-full-solution.tex structure-exercise.tex \
-		  big_chick.png bib-exercise.bib recap-exercise.tex \
+		  gerbil.jpg bib-exercise.bib recap-exercise.tex \
 		  recap-exercise-solution.pdf beamer-minimal.tex beamer-exercise.tex \
 		  beamer-exercise-solution.tex beamer-exercise-solution.pdf
 	tar czf latex-course.tgz $^
